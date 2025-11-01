@@ -42,7 +42,7 @@
     details.panel summary::-webkit-details-marker{display:none}
     .caret{transition:.2s transform}
     details[open] .caret{transform:rotate(90deg)}
-    .skill{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+    .skill{display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:center}
     .bar{height:10px;background:#1b2536;border-radius:999px;overflow:hidden}
     .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0}
     .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
@@ -73,9 +73,10 @@
           <a class="btn" href="mailto:rafism1997@gmail.com">Email</a>
         </div>
       </div>
-      <div class="orb float" aria-hidden="true"></div>
+      <div aria-hidden="true" class="orb float"></div>
     </div>
   </header>
+
   <nav class="tabs">
     <div class="container tabbar">
       <a class="chip" href="#profile">Profile</a>
@@ -84,126 +85,124 @@
       <a class="chip" href="#projects">Projects</a>
       <a class="chip" href="#achievements">Achievements</a>
       <a class="chip" href="#education">Education</a>
+      <a class="chip" href="#languages">Languages</a>
       <a class="chip" href="#contact">Contact</a>
     </div>
   </nav>
+
   <main>
-    <section class="section" id="profile">
+    <section id="profile" class="section">
       <div class="container">
         <h2>Profile</h2>
-        <p class="lead">Machine Learning Engineer with 5+ years building AI and robotics solutions. Expertise in Vision AI, MLOps, hardware interfacing, and deploying models to production on cloud and edge (Azure, AWS, EC2), including autonomous systems.</p>
-        <details class="panel reveal" open>
-          <summary><svg class="caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5l8 7-8 7"/></svg> Highlights</summary>
-          <ul>
-            <li>MLOps pipelines for on‑prem and cloud; CI/CD for CV models</li>
-            <li>Real‑time inferencing on NVIDIA GPUs with TensorRT</li>
-            <li>Edge integration, performance monitoring, and reliability at scale</li>
-          </ul>
-        </details>
+        <p class="lead">Machine Learning Engineer with 5+ years building AI and robotics solutions. Expertise in MLOps, computer vision, hardware interfacing, and deploying ML models to production on cloud and edge (Azure, AWS EC2). Passionate about autonomous systems, Vision AI, and real-world impact.</p>
       </div>
     </section>
-    <section class="section" id="skills">
+
+    <section id="skills" class="section">
       <div class="container">
         <h2>Skills</h2>
         <div class="grid cols-2">
-          <div class="card reveal">
-            <h3>Programming & Frameworks</h3>
-            <div class="skill">Python<div class="bar"><span style="width:95%"></span></div></div>
-            <div class="skill">C++<div class="bar"><span style="width:80%"></span></div></div>
-            <div class="skill">PyTorch<div class="bar"><span style="width:90%"></span></div></div>
-            <div class="skill">TensorFlow<div class="bar"><span style="width:80%"></span></div></div>
-            <div class="skill">OpenCV<div class="bar"><span style="width:90%"></span></div></div>
-            <div class="skill">Docker<div class="bar"><span style="width:85%"></span></div></div>
-          </div>
-          <div class="card reveal">
-            <h3>Cloud & MLOps</h3>
-            <div class="skill">Azure AI Services<div class="bar"><span style="width:85%"></span></div></div>
-            <div class="skill">Azure MLOps<div class="bar"><span style="width:90%"></span></div></div>
-            <div class="skill">AWS SageMaker<div class="bar"><span style="width:70%"></span></div></div>
-            <div class="skill">EC2 & Edge<div class="bar"><span style="width:80%"></span></div></div>
-          </div>
+          <details class="panel" open>
+            <summary><span class="caret">▶</span> Programming & Frameworks</summary>
+            <div class="grid cols-2">
+              <div class="skill"><strong>Python</strong><div class="bar"><span style="width:95%"></span></div></div>
+              <div class="skill"><strong>C/C++</strong><div class="bar"><span style="width:70%"></span></div></div>
+              <div class="skill"><strong>PyTorch</strong><div class="bar"><span style="width:90%"></span></div></div>
+              <div class="skill"><strong>TensorFlow</strong><div class="bar"><span style="width:80%"></span></div></div>
+              <div class="skill"><strong>OpenCV</strong><div class="bar"><span style="width:85%"></span></div></div>
+              <div class="skill"><strong>Docker</strong><div class="bar"><span style="width:85%"></span></div></div>
+            </div>
+          </details>
+          <details class="panel" open>
+            <summary><span class="caret">▶</span> Cloud & MLOps</summary>
+            <ul>
+              <li>Azure AI Services, Azure MLOps</li>
+              <li>AWS (EC2), AWS RoboMaker</li>
+              <li>CI/CD for model deployment</li>
+              <li>Edge deployments with NVIDIA/TensorRT</li>
+            </ul>
+          </details>
         </div>
       </div>
     </section>
-    <section class="section" id="experience">
+
+    <section id="experience" class="section">
       <div class="container">
         <h2>Work Experience</h2>
-        <div class="grid cols-2">
-          <div class="card reveal">
-            <h3>Technical Ops Lead & AI Architect</h3>
-            <div class="meta">UST Global • Aliso Viejo, CA • Feb 2024 – Present</div>
+        <div class="timeline">
+          <div class="t-item card">
+            <h3>Technical Ops Lead & AI Architect — UST Global</h3>
+            <div class="meta">Aliso Viejo, CA • Feb 2024 – Present</div>
             <ul>
-              <li>Leading end‑to‑end Vision AI product solutions for enterprise clients.</li>
-              <li>Designing scalable on‑prem MLOps pipelines with Azure frameworks.</li>
-              <li>Optimizing real‑time GPU inferencing with TensorRT on edge devices.</li>
+              <li>Implementation specialist for Vision AI Product Solutions for enterprise clients.</li>
+              <li>Designed on-prem MLOps pipelines using Azure MLOps; scalable, reliable CV deployments.</li>
+              <li>Optimized hardware; real-time inferencing with NVIDIA GPUs and TensorRT.</li>
+              <li>Automated multi-env deployments with CI/CD on cloud platforms (e.g., AWS EC2).</li>
+              <li>Monitored model performance for accuracy and efficiency.</li>
             </ul>
           </div>
-          <div class="card reveal">
-            <h3>Software Developer III</h3>
-            <div class="meta">UST Global • Aliso Viejo, CA • Oct 2024 – Feb 2024</div>
+          <div class="t-item card">
+            <h3>Software Developer III — UST Global</h3>
+            <div class="meta">Trivandrum, Kerala, India • Jan 2021 – Oct 2024</div>
             <ul>
-              <li>Implementation Specialist for Vision AI solutions, E2E delivery.</li>
-              <li>Automated multi‑env deployments with CI/CD (Azure, AWS EC2).</li>
-              <li>Monitored production metrics to sustain accuracy and efficiency.</li>
+              <li>Developed AMRs for warehouses using ROS; mapping via RTAB-Map; path planning via RRT.</li>
+              <li>Built drone swarm robotics apps with PX4 and YOLO-based detection.</li>
+              <li>Deployed simulations in AWS RoboMaker and Azure IoT Hub for fleet and edge.</li>
             </ul>
           </div>
-          <div class="card reveal">
-            <h3>Software Developer II</h3>
-            <div class="meta">UST Global • Trivandrum, India • Jan 2021 – Oct 2024</div>
+          <div class="t-item card">
+            <h3>Software Developer II — UST Global</h3>
+            <div class="meta">Trivandrum, India • Sep 2018 – Jan 2021</div>
             <ul>
-              <li>AMRs for warehouses with ROS, RTAB‑Map, RRT path planning.</li>
-              <li>Drone swarm apps (PX4) and YOLO‑based detection.</li>
-              <li>Simulations on AWS RoboMaker; Azure IoT for fleet & edge.</li>
+              <li>Simulations for fleet deployment/management using AWS RoboMaker.</li>
+              <li>Used Microsoft Azure for edge computing and IoT hardware projects.</li>
+              <li>Developed PX4 drone-based swarm robotics and YOLO object detection R&D.</li>
             </ul>
           </div>
-          <div class="card reveal">
+          <div class="t-item card">
             <h3>Intern</h3>
-            <div class="meta">UST Global • Trivandrum, India • Sep 2018 – Jan 2021</div>
-            <ul>
-              <li>Simulated fleet deployment with AWS RoboMaker for scale.</li>
-              <li>Built Azure edge/IoT solutions for performance & connectivity.</li>
-              <li>PX4 swarm robotics; YOLO R&amp;D for real‑time detection.</li>
-            </ul>
+            <div class="meta">Various engagements</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="section" id="projects">
+
+    <section id="projects" class="section">
       <div class="container">
         <h2>Projects & Initiatives</h2>
         <div class="grid cols-3">
-          <div class="card reveal">
-            <span class="tag">Vision AI</span>
-            <h3>Vision AI Product Development & Implementation</h3>
+          <div class="card">
+            <h3>POS Device Troubleshooting — Vision AI</h3>
+            <span class="tag">Vision AI</span><span class="tag">Reinforcement Learning</span>
+            <p>Vision AI app for Pharma/Retail/Manufacturing; on-prem edge deployment; real-time QA dashboards.</p>
             <ul>
-              <li>Deployed on‑prem AI models for Pharma, Retail, Manufacturing.</li>
-              <li>Real‑time dashboards for event visualization & QA insights.</li>
-              <li>GPU-accelerated inference pipelines and telemetry monitoring.</li>
+              <li>97% model accuracy with RL to reduce detection errors.</li>
+              <li>On-site implementation such as vial fill line monitoring to ensure SOP compliance.</li>
             </ul>
           </div>
-          <div class="card reveal">
-            <span class="tag">Robotics</span>
-            <h3>Autonomous Mobile Robots (AMRs)</h3>
-            <ul>
-              <li>ROS navigation stack, RTAB-Map SLAM, RRT path planning.</li>
-              <li>Integrated Azure IoT for fleet management and OTA updates.</li>
-              <li>Simulation in AWS RoboMaker for scale testing.</li>
-            </ul>
+          <div class="card">
+            <h3>Conversational Assistant with Custom Metahuman</h3>
+            <span class="tag">NLP</span><span class="tag">Unreal Engine</span>
+            <p>Custom Metahuman + GPT-powered assistant integrated with Unreal for immersive interactions.</p>
           </div>
-          <div class="card reveal">
-            <span class="tag">Edge AI</span>
-            <h3>Edge Deployments with TensorRT</h3>
+          <div class="card">
+            <h3>Tea Leaf Disease Detection</h3>
+            <span class="tag">YOLOv9</span><span class="tag">PyTorch</span>
+            <p>Multiclass tea leaf disease detection trained on custom dataset.</p>
             <ul>
-              <li>Converted PyTorch models to ONNX/TensorRT for Jetson/NVIDIA GPUs.</li>
-              <li>Latency optimized to sub-50ms with INT8 quantization.</li>
-              <li>Robust logging and monitoring with Prometheus/Grafana.</li>
+              <li>97% detection accuracy; Precision 95, Recall 96, F1 95.5.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <section class="section" id="achievements">
+
+    <section id="achievements" class="section">
       <div class="container">
-        <h2>Achievements</h2>
+        <h2>Achievements & Patents</h2>
         <div class="grid cols-2">
-          <div
+          <div class="card">
+            <h3>US Design Patent</h3>
+            <div class="meta">US D1,004,400 S • Issued Nov 14, 2023 • Term 15 years</div>
+            <p>Live hinge formed by selective material removal to improve flexibility on rigid sheets.</p>
+          </div>
