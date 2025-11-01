@@ -9,22 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0f17; /* dark indigo */
-      --panel:#121826;
-      --muted:#9fb0c6;
-      --text:#e6edf7;
-      --brand:#4f8cff; /* azure */
-      --brand-2:#22d3ee; /* cyan */
-      --accent:#a78bfa; /* violet */
-      --success:#10b981; /* green */
-      --warning:#f59e0b; /* amber */
-      --card:#0f1522;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:16px;
-    }
+    :root{--bg:#0b0f17;--panel:#121826;--muted:#9fb0c6;--text:#e6edf7;--brand:#4f8cff;--brand-2:#22d3ee;--accent:#a78bfa;--success:#10b981;--warning:#f59e0b;--card:#0f1522;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px}
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 70% -10%, rgba(79,140,255,.15), transparent 60%), var(--bg);color:var(--text);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 70% -10%, rgba(79,140,255,.15), transparent 60%), var(--bg);color:var(--text);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
     a{color:var(--brand)}
     header.hero{position:relative;overflow:hidden;padding:56px 20px 40px;border-bottom:1px solid rgba(255,255,255,.06)}
     .container{max-width:1120px;margin:0 auto;padding:0 20px}
@@ -33,58 +20,40 @@
     h1{font-size:40px;line-height:1.1;margin:14px 0 12px}
     .subtitle{font-size:18px;color:var(--muted)}
     .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));color:var(--text);text-decoration:none;transition:.2s transform, .2s box-shadow}
-    .btn.primary{background:linear-gradient(180deg,var(--brand),#2563eb);color:white;border:none;box-shadow:0 10px 24px rgba(79,140,255,.35)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));color:var(--text);text-decoration:none;transition:.2s transform,.2s box-shadow}
+    .btn.primary{background:linear-gradient(180deg,var(--brand),#2563eb);color:#fff;border:none;box-shadow:0 10px 24px rgba(79,140,255,.35)}
     .btn:hover{transform:translateY(-2px)}
-
-    /* Avatar / Orb */
     .orb{position:relative;aspect-ratio:1/1;border-radius:20px;background:radial-gradient(circle at 30% 30%, rgba(79,140,255,.35), transparent 40%), linear-gradient(145deg, var(--panel), #0c1322);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06), var(--shadow)}
     .orb::after{content:'';position:absolute;inset:12px;border-radius:16px;background:radial-gradient(ellipse at 70% 20%, rgba(34,211,238,.35), transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(167,139,250,.35), transparent 60%)}
-
     nav.tabs{position:sticky;top:0;background:linear-gradient(180deg,rgba(11,15,23,.92),rgba(11,15,23,.75));backdrop-filter:blur(10px);z-index:5;border-bottom:1px solid rgba(255,255,255,.06)}
     nav.tabs .tabbar{display:flex;gap:10px;flex-wrap:wrap;padding:10px}
     .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.08);cursor:pointer}
-
     section{scroll-margin-top:88px}
     .section{padding:40px 0}
     .section h2{font-size:26px;margin:0 0 14px}
     .section p.lead{color:var(--muted);margin-top:0}
-
-    /* Grid */
     .grid{display:grid;gap:18px}
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    @media (max-width: 900px){.hero-inner{grid-template-columns:1fr}.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
-
-    /* Accordion */
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
     details.panel{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:14px 16px}
-    details.panel + details.panel{margin-top:10px}
+    details.panel+details.panel{margin-top:10px}
     details.panel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px}
     details.panel summary::-webkit-details-marker{display:none}
     .caret{transition:.2s transform}
     details[open] .caret{transform:rotate(90deg)}
-
-    /* Skill bars */
     .skill{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
     .bar{height:10px;background:#1b2536;border-radius:999px;overflow:hidden}
-    .bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0}
-
-    /* Cards */
+    .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0}
     .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
     .card h3{margin:8px 0 6px;font-size:18px}
     .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(34,211,238,.15);color:var(--brand-2);font-size:12px;margin-right:6px}
     .meta{color:var(--muted);font-size:14px}
-
-    /* Timeline */
     .timeline{position:relative;padding-left:20px}
     .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand),transparent)}
     .t-item{position:relative;margin:14px 0 14px 12px}
     .t-item::before{content:'';position:absolute;left:-16px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--brand)}
-
-    /* Footer */
     footer{padding:26px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
-
-    /* Animations */
     @keyframes float {0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
     .float{animation:float 6s ease-in-out infinite}
     .reveal{opacity:0;transform:translateY(12px);transition:.5s}
@@ -107,7 +76,6 @@
       <div class="orb float" aria-hidden="true"></div>
     </div>
   </header>
-
   <nav class="tabs">
     <div class="container tabbar">
       <a class="chip" href="#profile">Profile</a>
@@ -119,13 +87,11 @@
       <a class="chip" href="#contact">Contact</a>
     </div>
   </nav>
-
   <main>
-    <section id="profile" class="section">
+    <section class="section" id="profile">
       <div class="container">
         <h2>Profile</h2>
         <p class="lead">Machine Learning Engineer with 5+ years building AI and robotics solutions. Expertise in Vision AI, MLOps, hardware interfacing, and deploying models to production on cloud and edge (Azure, AWS, EC2), including autonomous systems.</p>
-
         <details class="panel reveal" open>
           <summary><svg class="caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 5l8 7-8 7"/></svg> Highlights</summary>
           <ul>
@@ -136,33 +102,30 @@
         </details>
       </div>
     </section>
-
-    <section id="skills" class="section">
+    <section class="section" id="skills">
       <div class="container">
         <h2>Skills</h2>
         <div class="grid cols-2">
           <div class="card reveal">
             <h3>Programming & Frameworks</h3>
-            <div class="skill"><strong>Python</strong><div class="bar"><span style="--pct:95%"></span></div></div>
-            <div class="skill"><strong>C++</strong><div class="bar"><span style="--pct:80%"></span></div></div>
-            <div class="skill"><strong>PyTorch</strong><div class="bar"><span style="--pct:90%"></span></div></div>
-            <div class="skill"><strong>TensorFlow</strong><div class="bar"><span style="--pct:80%"></span></div></div>
-            <div class="skill"><strong>OpenCV</strong><div class="bar"><span style="--pct:90%"></span></div></div>
-            <div class="skill"><strong>Docker</strong><div class="bar"><span style="--pct:85%"></span></div></div>
+            <div class="skill">Python<div class="bar"><span style="width:95%"></span></div></div>
+            <div class="skill">C++<div class="bar"><span style="width:80%"></span></div></div>
+            <div class="skill">PyTorch<div class="bar"><span style="width:90%"></span></div></div>
+            <div class="skill">TensorFlow<div class="bar"><span style="width:80%"></span></div></div>
+            <div class="skill">OpenCV<div class="bar"><span style="width:90%"></span></div></div>
+            <div class="skill">Docker<div class="bar"><span style="width:85%"></span></div></div>
           </div>
-
           <div class="card reveal">
             <h3>Cloud & MLOps</h3>
-            <div class="skill"><strong>Azure AI Services</strong><div class="bar"><span style="--pct:85%"></span></div></div>
-            <div class="skill"><strong>Azure MLOps</strong><div class="bar"><span style="--pct:90%"></span></div></div>
-            <div class="skill"><strong>AWS SageMaker</strong><div class="bar"><span style="--pct:70%"></span></div></div>
-            <div class="skill"><strong>EC2 & Edge</strong><div class="bar"><span style="--pct:80%"></span></div></div>
+            <div class="skill">Azure AI Services<div class="bar"><span style="width:85%"></span></div></div>
+            <div class="skill">Azure MLOps<div class="bar"><span style="width:90%"></span></div></div>
+            <div class="skill">AWS SageMaker<div class="bar"><span style="width:70%"></span></div></div>
+            <div class="skill">EC2 & Edge<div class="bar"><span style="width:80%"></span></div></div>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="experience" class="section">
+    <section class="section" id="experience">
       <div class="container">
         <h2>Work Experience</h2>
         <div class="grid cols-2">
@@ -175,7 +138,6 @@
               <li>Optimizing real‑time GPU inferencing with TensorRT on edge devices.</li>
             </ul>
           </div>
-
           <div class="card reveal">
             <h3>Software Developer III</h3>
             <div class="meta">UST Global • Aliso Viejo, CA • Oct 2024 – Feb 2024</div>
@@ -185,7 +147,6 @@
               <li>Monitored production metrics to sustain accuracy and efficiency.</li>
             </ul>
           </div>
-
           <div class="card reveal">
             <h3>Software Developer II</h3>
             <div class="meta">UST Global • Trivandrum, India • Jan 2021 – Oct 2024</div>
@@ -195,21 +156,19 @@
               <li>Simulations on AWS RoboMaker; Azure IoT for fleet & edge.</li>
             </ul>
           </div>
-
           <div class="card reveal">
             <h3>Intern</h3>
             <div class="meta">UST Global • Trivandrum, India • Sep 2018 – Jan 2021</div>
             <ul>
               <li>Simulated fleet deployment with AWS RoboMaker for scale.</li>
               <li>Built Azure edge/IoT solutions for performance & connectivity.</li>
-              <li>PX4 swarm robotics; YOLO R&D for real‑time detection.</li>
+              <li>PX4 swarm robotics; YOLO R&amp;D for real‑time detection.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="projects" class="section">
+    <section class="section" id="projects">
       <div class="container">
         <h2>Projects & Initiatives</h2>
         <div class="grid cols-3">
@@ -219,4 +178,32 @@
             <ul>
               <li>Deployed on‑prem AI models for Pharma, Retail, Manufacturing.</li>
               <li>Real‑time dashboards for event visualization & QA insights.</li>
-             
+              <li>GPU-accelerated inference pipelines and telemetry monitoring.</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <span class="tag">Robotics</span>
+            <h3>Autonomous Mobile Robots (AMRs)</h3>
+            <ul>
+              <li>ROS navigation stack, RTAB-Map SLAM, RRT path planning.</li>
+              <li>Integrated Azure IoT for fleet management and OTA updates.</li>
+              <li>Simulation in AWS RoboMaker for scale testing.</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <span class="tag">Edge AI</span>
+            <h3>Edge Deployments with TensorRT</h3>
+            <ul>
+              <li>Converted PyTorch models to ONNX/TensorRT for Jetson/NVIDIA GPUs.</li>
+              <li>Latency optimized to sub-50ms with INT8 quantization.</li>
+              <li>Robust logging and monitoring with Prometheus/Grafana.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="achievements">
+      <div class="container">
+        <h2>Achievements</h2>
+        <div class="grid cols-2">
+          <div
