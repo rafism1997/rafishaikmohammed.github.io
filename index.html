@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Rafi Shaik Mohammed | AI Solutions Architect</title>
-  <meta name="description" content="Portfolio of Rafi Shaik Mohammed — Technical Ops Lead and AI Solutions Architect specializing in Vision AI, MLOps, and Robotics." />
+  <meta name="description" content="Portfolio of Rafi Shaik Mohammed — Technical Ops Lead and AI Solutions Architect specializing in Vision AI, MLOps, and Robotics."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,6 +28,7 @@
     .container{max-width:1120px;margin:0 auto;padding:0 20px}
     .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
     .badge{display:inline-flex;gap:8px;align-items:center;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#021024;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;letter-spacing:.6px;text-transform:uppercase}
+    .badge.alt{background:linear-gradient(90deg,#22c55e,#06b6d4);color:#021024}
     h1{font-size:40px;line-height:1.1;margin:14px 0 12px}
     .subtitle{font-size:18px;color:var(--muted)}
     .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
@@ -59,6 +60,10 @@
     .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0}
     .columns{display:grid;gap:18px;grid-template-columns:1fr 1fr}
     @media (max-width:900px){.columns{grid-template-columns:1fr}}
+    .awards{display:grid;gap:16px}
+    .award-item{display:flex;align-items:flex-start;gap:12px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
+    .award-icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(145deg,#1f2937,#0f172a);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+    .award-title{font-weight:700}
     /* simple animation for bars */
     .bar>span{animation:fill 1.2s ease forwards}
     @keyframes fill{from{width:0} to{width:var(--w,80%)}}
@@ -69,7 +74,7 @@
     <div class="wrap">
       <div class="brand">
         <div class="avatar" aria-hidden="true">
-          <img src="profile.jpg" alt="Profile photo of Rafi Shaik Mohammed" onerror="this.style.display='none'" />
+          <img alt="Profile photo of Rafi Shaik Mohammed" onerror="this.style.display='none'"/>
         </div>
         <div class="meta">
           <div class="name">Rafi Shaik Mohammed</div>
@@ -79,10 +84,10 @@
       <nav class="nav">
         <a class="chip" href="#about">About</a>
         <a class="chip" href="#skills">Skills</a>
-        <a class="chip" href="#education">Education & Languages</a>
+        <a class="chip" href="#education">Education &amp; Languages</a>
         <a class="chip" href="#experience">Experience</a>
         <a class="chip" href="#projects">Projects</a>
-        <a class="chip" href="#awards">Awards & Patents</a>
+        <a class="chip" href="#awards">Awards &amp; Patents</a>
         <a class="chip" href="#contact">Contact</a>
       </nav>
     </div>
@@ -93,6 +98,9 @@
       <div>
         <span class="badge">Vision AI • MLOps • Robotics</span>
         <h1>AI Solutions for the Physical World</h1>
+        <div class="cta">
+          <span class="badge alt">US &amp; India Patent Holder</span>
+        </div>
         <p class="subtitle">Building and deploying real-time Vision AI, edge inference, and scalable MLOps pipelines across Azure and AWS.</p>
         <div class="cta">
           <a class="btn primary" href="#projects">View Projects</a>
@@ -107,10 +115,10 @@
     <div class="container tabbar">
       <a class="chip" href="#about">About</a>
       <a class="chip" href="#skills">Skills</a>
-      <a class="chip" href="#education">Education & Languages</a>
+      <a class="chip" href="#education">Education &amp; Languages</a>
       <a class="chip" href="#experience">Experience</a>
       <a class="chip" href="#projects">Projects</a>
-      <a class="chip" href="#awards">Awards & Patents</a>
+      <a class="chip" href="#awards">Awards &amp; Patents</a>
       <a class="chip" href="#contact">Contact</a>
     </div>
   </nav>
@@ -119,7 +127,8 @@
     <div class="container">
       <h2>About</h2>
       <p class="lead">Machine Learning Engineer with 5+ years delivering Vision AI, MLOps and Robotics solutions. Experienced across Azure/AWS, on‑prem edge deployments, and real‑time inference on NVIDIA GPUs.</p>
-      <div aria-label="Key strengths" class="badges">
+      <p class="lead"><strong>US &amp; India Patent holder; architected Vision AI systems in regulated Pharma production with OEE impact.</strong></p>
+      <div class="badges" aria-label="Key strengths">
         <span class="badge">MLOps • Azure/AWS</span>
         <span class="badge">Vision AI • Edge</span>
         <span class="badge">Robotics • ROS/PX4</span>
@@ -144,12 +153,12 @@
 
   <section class="section sec-2" id="education">
     <div class="container">
-      <h2>Education & Languages</h2>
+      <h2>Education &amp; Languages</h2>
       <div class="columns">
         <div class="card">
           <h3>Education</h3>
           <ul>
-            <li><strong>B.Tech in Computer Science</strong> — Focus: Computer Vision, Robotics, ML</li>
+            <li>B.Tech in Computer Science — Focus: Computer Vision, Robotics, ML</li>
             <li>Certified: Azure AI Engineer Associate, AWS Machine Learning Specialty</li>
           </ul>
         </div>
@@ -169,7 +178,7 @@
     <div class="container">
       <h2>Experience</h2>
       <details class="panel" open>
-        <summary><span class="caret">▶</span> UST Global — Technical Ops Lead & AI Architect <span class="meta">(Feb 2024 – Present, Aliso Viejo, CA)</span></summary>
+        <summary><span class="caret">▶</span> UST Global — Technical Ops Lead &amp; AI Architect <span class="meta">(Feb 2024 – Present, Aliso Viejo, CA)</span></summary>
         <ul>
           <li>Pharma production environments: implemented Vision AI for vial fill line monitoring and SOP compliance.</li>
           <li>OEE improvement dashboards: designed real‑time dashboards for availability, performance, and quality KPIs.</li>
@@ -188,22 +197,4 @@
         </ul>
       </details>
       <details class="panel">
-        <summary><span class="caret">▶</span> UST Global — Software Developer II <span class="meta">(Sep 2018 – Jan 2021, Trivandrum, India)</span></summary>
-        <ul>
-          <li>Designed simulations for fleet deployment and management using AWS RoboMaker.</li>
-          <li>Built Azure edge computing solutions and hardware/IoT integrations for connectivity and performance.</li>
-          <li>Developed PX4‑based swarm robotics and multi‑drone autonomy.</li>
-          <li>Leveraged YOLO frameworks for real‑time object recognition and tracking R&amp;D.</li>
-        </ul>
-      </details>
-      <details class="panel">
-        <summary><span class="caret">▶</span> Intern — R&amp;D</summary>
-        <ul>
-          <li>Contributed to live‑hinge design research and prototyping; foundational work behind later patent filings.</li>
-        </ul>
-      </details>
-    </div>
-  </section>
-
-  <section class="section sec-4" id="projects">
-    <div class="container
+        <summary><span class="caret">▶</span
