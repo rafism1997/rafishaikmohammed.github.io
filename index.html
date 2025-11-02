@@ -14,20 +14,16 @@
     html{scroll-behavior:smooth}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
     a{color:var(--brand)}
-    
-    /* Header & Navigation */
     header.site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,15,23,.92),rgba(11,15,23,.75));backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
     header.site-header .wrap{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand .badge-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#021024;font-weight:800;font-size:12px;letter-spacing:.6px;text-transform:uppercase;box-shadow:0 4px 10px rgba(79, 140, 255, 0.4)}
+    .brand .badge-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#021024;font-weight:800;font-size:12px;letter-spacing:.6px;text-transform:uppercase;box-shadow:var(--shadow)}
     .brand .meta{line-height:1}
     .brand .name{font-weight:800;letter-spacing:.2px}
     .brand .title{color:var(--muted);font-size:12px}
     nav{display:flex;gap:10px;flex-wrap:wrap}
-    .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.08);text-decoration:none;transition:background .2s, color .2s}
-    .chip:hover{background:var(--brand);color:var(--bg)}
+    .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.08);text-decoration:none}
 
-    /* Hero Section */
     header.hero{position:relative;overflow:hidden;padding:80px 20px 56px;border-bottom:1px solid rgba(255,255,255,.06);background:radial-gradient(1200px 600px at 70% -10%, rgba(79,140,255,.15), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0))}
     .container{max-width:1120px;margin:0 auto;padding:0 20px}
     .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
@@ -38,77 +34,41 @@
     .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));color:var(--text);text-decoration:none;transition:.2s transform,.2s box-shadow}
     .btn.primary{background:linear-gradient(180deg,var(--brand),#2563eb);color:#fff;border:none;box-shadow:0 10px 24px rgba(79,140,255,.35)}
-    .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-2px)}
     .orb{position:relative;aspect-ratio:1/1;border-radius:20px;background:radial-gradient(circle at 30% 30%, rgba(79,140,255,.35), transparent 40%), linear-gradient(145deg, var(--panel), #0c1322);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06), var(--shadow);display:flex;align-items:center;justify-content:center;overflow:hidden}
     .hero-photo{width:220px;height:220px;border-radius:20px;object-fit:cover;box-shadow:var(--shadow)}
-    .hero-photo:hover {animation: pulse 1.5s infinite;}
-    @keyframes pulse {0% {box-shadow: 0 0 0 0 rgba(79, 140, 255, 0.5);} 70% {box-shadow: 0 0 0 10px rgba(79, 140, 255, 0);} 100% {box-shadow: 0 0 0 0 rgba(79, 140, 255, 0);}}
 
-    /* Sections and Cards */
     nav.tabs{position:sticky;top:62px;background:linear-gradient(180deg,rgba(11,15,23,.92),rgba(11,15,23,.75));backdrop-filter:blur(10px);z-index:5;border-bottom:1px solid rgba(255,255,255,.06)}
     nav.tabs .tabbar{display:flex;gap:10px;flex-wrap:wrap;padding:10px}
     section{scroll-margin-top:120px}
     .section{padding:56px 0}
-    /* Section Animation */
-    @keyframes fadeInSlideUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .section {
-        opacity: 0;
-        animation: fadeInSlideUp 0.8s ease forwards;
-    }
-    #about { animation-delay: 0.1s; }
-    #skills { animation-delay: 0.3s; }
-    #experience { animation-delay: 0.5s; }
-    #education, #languages { animation-delay: 0.7s; }
-    #projects { animation-delay: 0.9s; }
-    #awards { animation-delay: 1.1s; }
-
     .lead{color:var(--muted);margin-top:0}
     .grid{display:grid;gap:18px}
     .grid.cols-2{grid-template-columns:repeat(2,1fr)}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
     @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;box-shadow:var(--shadow);transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease}
-    .card:hover{transform: translateY(-4px); box-shadow: 0 15px 40px rgba(79, 140, 255, 0.45); border-color: var(--brand);}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
     .card h3{margin:8px 0 6px;font-size:18px}
     .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(34,211,238,.15);color:var(--brand-2);font-size:12px;margin-right:6px}
-    .tag.primary{background:rgba(79,140,255,.15); color:var(--brand)}
-    .tag.accent{background:rgba(167,139,250,.15); color:var(--accent)}
     .meta{color:var(--muted);font-size:14px}
-    .meta.date{font-weight:500;margin-top:4px;display:block}
-
-    /* Panels and Details */
     details.panel{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:14px 16px}
     details.panel + details.panel{margin-top:10px}
-    details.panel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;font-weight:600}
+    details.panel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px}
     details.panel summary::-webkit-details-marker{display:none}
     .caret{transition:.2s transform}
     details[open] .caret{transform:rotate(90deg)}
-    details.panel ul {margin-top: 10px; padding-left: 20px;}
-    details.panel li {margin-bottom: 6px; color: var(--muted);}
-
-    /* Skills Section */
     .skill{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center}
     .bar{height:10px;background:#1b2536;border-radius:999px;overflow:hidden}
     .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0}
     .columns{display:grid;gap:18px;grid-template-columns:1fr 1fr}
     @media (max-width:900px){.columns{grid-template-columns:1fr}}
-    
-    /* Awards */
     .awards{display:grid;gap:16px}
     .award-item{display:flex;align-items:flex-start;gap:12px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
-    .award-item:hover {border-color: var(--success); transform: translateY(-2px); box-shadow: 0 8px 16px rgba(16, 185, 129, 0.25);}
-    .award-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(145deg,var(--success),#059669);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06); flex-shrink: 0}
-    .award-icon svg {width: 18px; height: 18px; fill: #fff;}
-    .award-title{font-weight:700; color:var(--brand-2); margin-top: 2px;}
-    .award-details {font-size: 13px; color: var(--muted);}
-    
-    /* simple animation for bars */
+    .award-icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(145deg,#1f2937,#0f172a);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+    .award-title{font-weight:700}
+    /* simple animation for bars */
     .bar>span{animation:fill 1.2s ease forwards}
     @keyframes fill{from{width:0} to{width:var(--w,80%)}}
-
   </style>
 </head>
 <body>
@@ -127,8 +87,9 @@
         <a href="#experience" class="chip">Experience</a>
         <a href="#education" class="chip">Education</a>
         <a href="#projects" class="chip">Projects</a>
-        <a href="#awards" class="chip">Awards</a>
-        <a href="mailto:rafism1997@gmail.com" class="chip">Contact</a>
+        <a href="#languages" class="chip">Languages</a>
+        <a href="#awards" class="chip">Awards & Patents</a>
+        <a href="#contact" class="chip">Contact</a>
       </nav>
     </div>
   </header>
@@ -146,80 +107,64 @@
           </div>
         </div>
         <div class="orb">
-          <!-- Placeholder image for professional appearance -->
-          <img src="https://placehold.co/220x220/1f2937/a78bfa?text=AI+Architect" alt="Rafi Shaik Mohammed — AI Solutions Architect" class="hero-photo" width="220" height="220" />
+          <img src="profile.jpg" alt="Rafi Shaik Mohammed — portrait" class="hero-photo" width="220" height="220" onerror="this.src='https://via.placeholder.com/220'" />
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- About: Content from current site, kept as-is -->
+    <!-- About: keep content as-is from current site (do not modify wording) -->
     <section id="about" class="section container">
       <h2>About</h2>
       <p class="lead">Hands-on AI Solutions Architect delivering end-to-end computer vision systems from architecture through deployment. I build production-grade, vision-based intelligent systems and MLOps pipelines across Pharma, Retail, and Manufacturing—optimizing reliability, compliance, and OEE. Over 5+ years of designing, implementing, and scaling AI at the edge and in the cloud.</p>
     </section>
 
-    <!-- Skills (Updated with CV content) -->
+    <!-- Skills (collapsible panels + animated bars) -->
     <section id="skills" class="section container">
       <h2>Skills</h2>
       <details class="panel" open>
-        <summary><span class="caret">▶</span> Programming & Computer Vision</summary>
-        <div class="grid cols-2">
-          <div class="skill"><strong>Python / C++</strong><div class="bar"><span style="--w:95%"></span></div></div>
-          <div class="skill"><strong>PyTorch / TensorFlow</strong><div class="bar"><span style="--w:90%"></span></div></div>
-          <div class="skill"><strong>Object Detection (YOLO)</strong><div class="bar"><span style="--w:92%"></span></div></div>
-          <div class="skill"><strong>OpenCV</strong><div class="bar"><span style="--w:88%"></span></div></div>
+        <summary><span class="caret">▶</span> Computer Vision & AI</summary>
+        <div class="grid">
+          <div class="skill"><strong>Detection/Segmentation</strong><div class="bar"><span style="--w:92%"></span></div></div>
+          <div class="skill"><strong>Tracking & Pose</strong><div class="bar"><span style="--w:85%"></span></div></div>
+          <div class="skill"><strong>OCR & Document AI</strong><div class="bar"><span style="--w:80%"></span></div></div>
         </div>
       </details>
       <details class="panel">
-        <summary><span class="caret">▶</span> MLOps & Cloud Platforms</summary>
-        <div class="grid cols-2">
-          <div class="skill"><strong>Azure MLOps & AI Services</strong><div class="bar"><span style="--w:92%"></span></div></div>
-          <div class="skill"><strong>AWS SageMaker / EC2</strong><div class="bar"><span style="--w:85%"></span></div></div>
-          <div class="skill"><strong>Model Deployment (CI/CD)</strong><div class="bar"><span style="--w:88%"></span></div></div>
-          <div class="skill"><strong>Serving (Triton / Docker)</strong><div class="bar"><span style="--w:86%"></span></div></div>
+        <summary><span class="caret">▶</span> MLOps & Platforms</summary>
+        <div class="grid">
+          <div class="skill"><strong>Model Lifecycle (DVC,CML)</strong><div class="bar"><span style="--w:88%"></span></div></div>
+          <div class="skill"><strong>CI/CD (GitHub, Argo)</strong><div class="bar"><span style="--w:84%"></span></div></div>
+          <div class="skill"><strong>Serving (Triton, TorchServe)</strong><div class="bar"><span style="--w:86%"></span></div></div>
         </div>
       </details>
       <details class="panel">
-        <summary><span class="caret">▶</span> Edge Computing & Robotics</summary>
-        <div class="grid cols-2">
-          <div class="skill"><strong>NVIDIA Jetson / TensorRT</strong><div class="bar"><span style="--w:90%"></span></div></div>
-          <div class="skill"><strong>ROS / ROS2</strong><div class="bar"><span style="--w:82%"></span></div></div>
-          <div class="skill"><strong>AWS RoboMaker / Azure IoT</strong><div class="bar"><span style="--w:80%"></span></div></div>
-          <div class="skill"><strong>Autonomous Systems (AMR/Drone)</strong><div class="bar"><span style="--w:78%"></span></div></div>
+        <summary><span class="caret">▶</span> Edge, Cloud & Robotics</summary>
+        <div class="grid">
+          <div class="skill"><strong>Jetson/ONNX/TensorRT</strong><div class="bar"><span style="--w:90%"></span></div></div>
+          <div class="skill"><strong>Azure/AWS/GCP</strong><div class="bar"><span style="--w:82%"></span></div></div>
+          <div class="skill"><strong>ROS2/Industrial Comms</strong><div class="bar"><span style="--w:78%"></span></div></div>
         </div>
       </details>
     </section>
 
-    <!-- Experience (Updated with CV content) -->
+    <!-- Experience (collapsible roles) -->
     <section id="experience" class="section container">
       <h2>Experience</h2>
       <details class="panel" open>
-        <summary><span class="caret">▶</span> Technical Ops Lead and AI Architect, **UST Global**</summary>
-        <div class="meta date">February 2024 - Present | Aliso Viejo, CA</div>
+        <summary><span class="caret">▶</span> Technical Operations Lead — Vision AI</summary>
         <ul>
-          <li>Drove architecture and deployment of end-to-end Vision AI solutions for enterprise clients across Pharma, Retail, and Manufacturing.</li>
-          <li>Led MLOps modernization initiatives, designing scalable and reliable model rollout gates using **Azure MLOps** frameworks.</li>
-          <li>Optimized hardware configurations and interfaced ML models with edge devices, achieving real-time inferencing using **NVIDIA GPUs and TensorRT**.</li>
+          <li>Drove architecture and deployment of vision systems across Pharma, Retail and Manufacturing, improving OEE and compliance.</li>
+          <li>Led MLOps modernization with automated data pipelines, versioning (DVC), and model rollout gates.</li>
+          <li>Delivered edge inference on Jetson with TensorRT; standardized monitoring and retraining loops.</li>
         </ul>
       </details>
       <details class="panel">
-        <summary><span class="caret">▶</span> Software Developer - III / Implementation Specialist, **UST Global**</summary>
-        <div class="meta date">October 2024 - February 2024 | Aliso Viejo, CA</div>
+        <summary><span class="caret">▶</span> AI Solutions Architect</summary>
         <ul>
-          <li>Served as Implementation Specialist for Vision AI Product Solutions, focusing on seamless integration and deployment for enterprise clients.</li>
-          <li>Automated deployment processes across heterogeneous environments, streamlining model rollout with **CI/CD workflows** on cloud platforms like AWS EC2.</li>
-          <li>Monitored and analyzed performance metrics for deployed models, ensuring consistent accuracy and efficiency in production.</li>
-        </ul>
-      </details>
-      <details class="panel">
-        <summary><span class="caret">▶</span> Software Developer - II / Intern, **UST Global**</summary>
-        <div class="meta date">September 2018 - October 2024 | Trivandrum, India</div>
-        <ul>
-          <li>Developed Autonomous Mobile Robots (AMRs) for warehouse management using **ROS**, implementing mapping and path planning algorithms.</li>
-          <li>Created drone swarm robotics applications utilizing **PX4 and YOLO-based** object detection frameworks.</li>
-          <li>Designed and implemented simulations for fleet deployment using **AWS RoboMaker and Azure IoT Hub** for edge computing solutions.</li>
+          <li>Designed scalable microservices for CV inference (Triton/TorchServe) with autoscaling and A/B testing.</li>
+          <li>Mentored cross-functional teams; instituted coding standards and reviews for ML and robotics stacks.</li>
         </ul>
       </details>
     </section>
@@ -229,13 +174,8 @@
       <section id="education">
         <h2>Education</h2>
         <div class="card">
-          <h3>Bachelor of Technology (BTech)</h3>
-          <div class="meta">Electrical and Electronics Engineering</div>
-          <div class="meta date">Government Engineering College Barton Hill | 2016-2020 (GPA: 8.0/10)</div>
-        </div>
-        <div class="card" style="margin-top: 18px;">
-          <h3>Higher Secondary School</h3>
-          <div class="meta date">Sarvodaya Central Vidyalaya | 2013-2015 (GPA: 8.8/10)</div>
+          <h3>Bachelor of Technology</h3>
+          <div class="meta">Major in Electronics/Computer vision coursework. Honors; projects in robotics and AI.</div>
         </div>
       </section>
       <section id="languages">
@@ -244,92 +184,17 @@
           <div class="grid">
             <div><span class="tag">English</span> Fluent</div>
             <div><span class="tag">Hindi</span> Professional</div>
-            <div><span class="tag">Malayalam</span> Professional</div>
+            <div><span class="tag">Telugu</span> Native</div>
           </div>
         </div>
       </section>
     </section>
 
-    <!-- Projects (Updated with CV content) -->
+    <!-- Projects (interactive cards) -->
     <section id="projects" class="section container">
-      <h2>Key Projects & Initiatives</h2>
+      <h2>Projects</h2>
       <div class="grid cols-3">
         <article class="card">
-          <h3>Vision AI Product Development & Implementation</h3>
-          <p class="meta">Developed and deployed Vision AI models for QA (vial fill line monitoring) across Pharma and Manufacturing sectors.</p>
-          <div><span class="tag primary">On-Prem Deployment</span> <span class="tag accent">97% Accuracy</span> <span class="tag primary">Reinforcement Learning</span></div>
-        </article>
-        <article class="card">
-          <h3>NLP-Based Conversational Metahuman</h3>
-          <p class="meta">Engineered a custom, visually realistic conversational assistant by integrating OpenAI's GPT-3 with Unreal Engine.</p>
-          <div><span class="tag primary">Unreal Engine</span> <span class="tag accent">GPT-3</span> <span class="tag primary">3D Reconstruction</span></div>
-        </article>
-        <article class="card">
-          <h3>Tea Leaf Disease Detection (YOLOv9)</h3>
-          <p class="meta">Addressed a multiclass classification problem achieving 97% detection accuracy for various tea leaf diseases.</p>
-          <div><span class="tag primary">YOLOv9</span> <span class="tag accent">PyTorch</span> <span class="tag primary">Multiclass Classification</span></div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Awards & Patents (New Section from CV content) -->
-    <section id="awards" class="section container">
-      <h2>Awards & Patents</h2>
-      <div class="awards">
-        <div class="award-item">
-          <div class="award-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14h-2v-2H9v-2h2V8h2v6h2v2h-2zm-3-8h2V6h-2v2zm4 0h2V6h-2v2z"/></svg>
-          </div>
-          <div>
-            <div class="award-title">US Design Patent: Live Hinge Design (US D1,004,400 S)</div>
-            <div class="award-details">Novel design for a live hinge formed from a rigid material by selective material removal, enhancing flexibility and performance. **Issue Date: November 14, 2023.**</div>
-          </div>
-        </div>
-        <div class="award-item">
-          <div class="award-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14h-2v-2H9v-2h2V8h2v6h2v2h-2zm-3-8h2V6h-2v2zM15 6h2v2h-2V6z"/></svg>
-          </div>
-          <div>
-            <div class="award-title">Indian Patent: Live Hinge Design (Patent No: 354819-001)</div>
-            <div class="award-details">Introduced an innovative material removal pattern to achieve a balance between rigidity and flexibility for diverse material applications. **Issue Date: February 1, 2022.**</div>
-          </div>
-        </div>
-        <div class="award-item">
-          <div class="award-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-9.8 8.16l-.01.07V12a10 10 0 0 0 10 10 10 10 0 0 0 9.99-9.14l.01-.06V12a10 10 0 0 0-10-10zm0 4.5l1.83 3.71 4.09.6-2.96 2.89.7 4.08L12 15.7l-3.66 1.92.7-4.08-2.96-2.89 4.09-.6L12 6.5z"/></svg>
-          </div>
-          <div>
-            <div class="award-title">Top Performer for Aspiring Leaders Program</div>
-            <div class="award-details">Recognition for leadership potential and high performance within the global Aspiring Leaders Program conducted by UST Global.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="section container">
-        <h2>Contact</h2>
-        <p class="lead">I am available for new leadership and consulting opportunities. Reach out to discuss how Vision AI and MLOps can transform your operations.</p>
-        <div class="cta" style="justify-content: center; margin-top: 30px;">
-            <a href="mailto:rafism1997@gmail.com" class="btn primary">Email Me: rafism1997@gmail.com</a>
-            <a href="https://www.linkedin.com/in/s-m-rafi-911442130/" target="_blank" class="btn">Connect on LinkedIn</a>
-        </div>
-    </section>
-  </main>
-
-<script>
-    // This script ensures the skill bars start their animation after the content loads, 
-    // creating a better visual effect than pure CSS alone.
-    document.addEventListener('DOMContentLoaded', () => {
-        const skillBars = document.querySelectorAll('.bar > span');
-        skillBars.forEach(bar => {
-            const width = bar.style.getPropertyValue('--w');
-            // Force reflow/repaint to restart the animation
-            bar.style.width = '0';
-            void bar.offsetWidth; 
-            bar.style.width = width;
-        });
-    });
-</script>
-</body>
-</html>
+          <h3>Smart Pharma Visual QA</h3>
+          <p class="meta">End-to-end CV pipeline for blister/label QA. Edge inference (Jetson) with cloud retraining.</p>
+          <div><span class="tag">YOLO/Detectron</span> <span class="
