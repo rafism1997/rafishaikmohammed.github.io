@@ -1,482 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Rafi Shaik Mohammed Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rafi Shaik Mohammed | AI Solutions Architect</title>
+  <meta name="description" content="Portfolio of Rafi Shaik Mohammed — Technical Ops Lead and AI Solutions Architect specializing in Vision AI, MLOps, and Robotics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root{
+      --bg:#0b0f17;
+      --panel:#121826;
+      --muted:#9fb0c6;
+      --text:#e6edf7;
+      --brand:#4f8cff;
+      --brand2:#22d3ee;
+      --accent:#a78bfa;
+      --success:#10b981;
+      --warning:#f59e0b;
+      --card:#141b2d;
+      --shadow:0 10px 30px rgba(0,0,0,.3);
+      --radius:16px;
+    }
     html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f5f5f7;
-      overflow-x: hidden;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Segoe UI, Arial, sans-serif;
+      margin: 0; padding: 0;
+      scroll-behavior:smooth;
     }
-    header {
-      background: #064e3b;
-      color: #fff;
-      padding: 1.2em 0;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    header.site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: linear-gradient(180deg,rgba(11,15,23,0.97),rgba(11,15,23,0.77));
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--shadow);
     }
-    .badge {
-      background: #059669;
-      color: #fff;
-      padding: 0.4em 1em;
-      font-size: 0.97em;
-      border-radius: 25px;
-      display: inline-block;
-      margin: 1em 0 0.3em 0;
+    header.site-header .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 22px;
     }
-    nav {
-      margin-top: 0.7em;
+    .brand {
+      display: flex; align-items: center; gap: 16px;
     }
-    nav a {
-      color: #fff;
+    .badge-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 14px; border-radius: 999px;
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      color:#021024;font-weight:800;font-size:12px;letter-spacing:.6px;text-transform:uppercase;box-shadow: var(--shadow);
+    }
+    .brand .meta { line-height: 1; }
+    .brand .name { font-weight: 800; letter-spacing: .2px; font-size: 1.05em;}
+    .brand .title { color: var(--muted); font-size: 12px; }
+    nav { display: flex; gap: 10px; flex-wrap: wrap; }
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(79,140,255,0.14);
+      color: var(--brand);
+      border: 1px solid var(--brand);
+      font-weight: 600;
       text-decoration: none;
-      margin: 0 0.8em;
-      font-weight: 500;
-      background: #065f46;
-      border-radius: 20px;
-      padding: 0.4em 1em;
-      transition: background 0.16s;
+      transition:background 0.2s;
+      cursor:pointer;
+    }
+    .chip:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    header.hero {
+      padding: 70px 20px 50px;
+      background: radial-gradient(1000px 600px at 70% -10%, rgba(79,140,255,.19), transparent 60%),
+                  linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 22px;}
+    .hero-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 35px; align-items: center;}
+    .badge { display: inline-flex; gap: 8px; align-items: center;
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      color: #021024; padding: 7px 15px; border-radius: 999px;
+      font-weight: 700; font-size: 13px; letter-spacing: .6px; text-transform: uppercase; }
+    .badge.alt {background:linear-gradient(90deg,#22c55e,#06b6d4); color:#021024}
+    h1 {font-size: 38px;line-height:1.09;margin:10px 0 14px;}
+    .subtitle {font-size:17px;color:var(--muted);}
+    .cta {
+      margin-top:18px; display:flex;gap:12px;flex-wrap:wrap;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 18px; border-radius: 14px;
+      border: 1px solid var(--brand2); background: linear-gradient(180deg,var(--brand),#2563eb 80%);
+      color: #fff; text-decoration: none; font-weight:600; font-size:1em;
+      box-shadow: 0 8px 22px rgba(79,140,255,.28); transition:.2s transform,.2s box-shadow;
       cursor: pointer;
     }
-    nav a:hover {
-      background: #02735e;
+    .btn:hover { transform: translateY(-2px) scale(1.035);}
+    .orb {
+      aspect-ratio: 1/1;
+      border-radius: 18px;
+      background: radial-gradient(circle at 30% 30%, rgba(79,140,255,.32), transparent 45%), linear-gradient(145deg, var(--panel), #0c1322);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.07), var(--shadow);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+      height:220px;width:220px;
     }
-    .section {
-      max-width: 800px;
-      margin: 2.5em auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 32px 0 #05966922;
-      padding: 2em 2em 1em 2em;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s, transform 0.7s;
-      visibility: visible;
+    .hero-photo {width:100%;height:100%;border-radius:18px;object-fit:cover;}
+    
+    nav.tabs {position: sticky;top:62px;background:linear-gradient(180deg,rgba(13,21,37,.92),rgba(11,15,23,.75));backdrop-filter:blur(8px);z-index:5;border-bottom:1px solid rgba(255,255,255,.06);}
+    nav.tabs .tabbar{display:flex;gap:10px;flex-wrap:wrap;padding:10px}
+
+    .section {padding:48px 0;}
+    section {scroll-margin-top:110px;}
+    .lead {color: var(--muted); margin-top:0;}
+    .card {background:var(--card);border:1px solid var(--brand2);border-radius:14px;padding:20px;box-shadow:var(--shadow);}
+    .card h3{margin:8px 0 6px;font-size:18px}
+    
+    .tag {
+      display:inline-block; padding:5px 10px; border-radius:999px;
+      background:rgba(34,211,238,.17); color:var(--brand2);
+      font-size:12px; margin-right:7px; font-weight:600;
+      cursor:pointer;transition:background .2s;
     }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .tag:hover { background: var(--brand2); color:#021024;}
+    details.panel {
+      background: linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+      border: 1px solid var(--brand2);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom:12px;
     }
-    h1, h2 {
-      margin: 0.4em 0;
-      letter-spacing: -1px;
-      font-weight: 700;
-    }
-    h2 { font-size: 1.45em; color: #064e3b; margin-bottom: 0.3em;}
-    .skills-bar {
-      background: #e5e7eb;
-      border-radius: 6px;
-      overflow: hidden;
-      margin-bottom: 1em;
-      position: relative;
-    }
-    .skills-bar span {
-      display: block;
-      height: 1.2em;
-      background: linear-gradient(90deg,#059669 70%,#34d399);
-      border-radius: 6px;
-      width: 0;
-      transition: width 1.2s cubic-bezier(.77,0,.18,1.01);
-    }
-    .card {
-      border: 1px solid #e5e7eb;
-      background: #fbfcff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px #05966911;
-      margin-bottom: 1em;
-      padding: 1em 1.4em;
-    }
-    .chip, .tag {
-      display: inline-block;
-      background: #f5f5f7;
-      color: #059669;
-      border: 1px solid #05966977;
-      border-radius: 15px;
-      padding: 0.18em 0.8em;
-      margin: 2px 2px 7px 0;
-      font-size: 0.96em;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.15s;
-      user-select: none;
-    }
-    .chip:hover, .tag:hover {
-      background: #e0faf1;
-      color: #065f46;
-      border-color: #059669;
-    }
-    .section:last-child {margin-bottom: 2em;}
-    @media (max-width: 650px){
-      .section{padding:1.2em;}
-    }
+    details.panel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;font-weight:600;}
+    details.panel summary::-webkit-details-marker{display:none;}
+    .caret{transition:.2s transform;}
+    details[open] .caret{transform:rotate(90deg);}
+    .skill{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center}
+    .bar{height:11px;background:#1b2533;border-radius:999px;overflow:hidden}
+    .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0; transition:width 1.2s cubic-bezier(.77,0,.18,1.01);}
+    @media (max-width:950px){.hero-inner{grid-template-columns:1fr}.container{padding:0 10px;}}
+    @media (max-width:700px){.section{padding:22px 3px;} .card{padding:14px;}}
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>Rafi Shaik Mohammed</h1>
-    <div class="badge">Vision AI | MLOps | Robotics</div>
-    <nav>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#awards">Awards & Patents</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <span class="badge-tag">Vision Architect | Hands-on Expert</span>
+        <div class="meta">
+          <div class="name">Rafi Shaik Mohammed</div>
+          <div class="title">AI Solutions Architect</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about" class="chip">About</a>
+        <a href="#skills" class="chip">Skills</a>
+        <a href="#experience" class="chip">Experience</a>
+        <a href="#projects" class="chip">Projects</a>
+        <a href="#awards" class="chip">Awards & Patents</a>
+        <a href="#contact" class="chip">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="section" id="hero" style="text-align:center;">
-    <h2>Available for Leadership Roles</h2>
-    <div class="chip" onclick="alert('US & Indian Patents Holder!')">US & Indian Patents Holder</div>
-    <div class="chip" onclick="alert('Active in GenAI & Robotics!')">Active in GenAI & Robotics</div>
-    <p>Building intelligent solutions for real-world impact.</p>
-  </section>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <span class="badge alt">Available for leadership in Vision AI</span>
+          <h1>Designing Intelligent Vision and Robotics Solutions</h1>
+          <p class="subtitle">Technical Ops Lead and AI Solutions Architect specializing in Vision AI, MLOps, and Robotics.</p>
+          <div class="cta">
+            <a href="#projects" class="btn">Explore Projects</a>
+            <a href="#awards" class="btn">Awards & Patents</a>
+          </div>
+        </div>
+        <div class="orb">
+          <img src="profile.jpg" alt="Rafi Shaik Mohammed — portrait" class="hero-photo" onerror="this.src='https://via.placeholder.com/220'" />
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <div>
-      <span class="tag" onclick="alert('Expertise: Machine Learning & AI')">Machine Learning & AI</span>
-      <span class="tag" onclick="alert('Expertise: Robotics')">Robotics</span>
-      <span class="tag" onclick="alert('Expertise: MLOps')">MLOps</span>
-      <span class="tag" onclick="alert('Expertise: Deep Learning')">Deep Learning</span>
-    </div>
-    <div class="skills-bar"><span data-width="90%"></span></div>
-    <div>
-      <span class="tag" onclick="alert('Skill: Python')">Python</span>
-      <span class="tag" onclick="alert('Skill: TensorFlow')">TensorFlow</span>
-      <span class="tag" onclick="alert('Skill: OpenCV')">OpenCV</span>
-      <span class="tag" onclick="alert('Skill: PyTorch')">PyTorch</span>
-      <span class="tag" onclick="alert('Skill: C++')">C++</span>
-    </div>
-    <div class="skills-bar"><span data-width="80%"></span></div>
-    <div>
-      <span class="tag" onclick="alert('Used in projects: Git & GitHub')">Git & GitHub</span>
-      <span class="tag" onclick="alert('Used in projects: REST APIs')">REST APIs</span>
-      <span class="tag" onclick="alert('Used in projects: Docker')">Docker</span>
-    </div>
-    <div class="skills-bar"><span data-width="70%"></span></div>
-  </section>
+  <main>
+    <section id="about" class="section container">
+      <h2>About</h2>
+      <p class="lead">Hands-on AI Solutions Architect delivering end-to-end computer vision systems from architecture through deployment. I build production-grade, vision-based intelligent systems and MLOps pipelines across Pharma, Retail, and Manufacturing—optimizing reliability, compliance, and OEE. Over 5+ years of designing, implementing, and scaling AI at the edge and in the cloud.</p>
+    </section>
 
-  <section class="section" id="experience">
-    <h2>Experience</h2>
-    <div class="card">
-      <b>Lead Vision Engineer – UST Global</b> <span class="chip" onclick="alert('Current Position')">Present</span>
-      <ul>
-        <li>AI Robotics, Vision Intelligence platforms</li>
-        <li>Mentored ML teams</li>
-      </ul>
-    </div>
-    <div class="card">
-      <b>ML Researcher – Academic & Freelance</b>
-      <ul>
-        <li>Kaggle Competitions</li>
-        <li>GenAI Projects</li>
-      </ul>
-    </div>
-  </section>
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <details class="panel" open>
+        <summary><span class="caret">▶</span> Computer Vision & AI</summary>
+        <div class="skill"><strong>Detection/Segmentation</strong><div class="bar"><span style="width:0%;" data-width="92%"></span></div></div>
+        <div class="skill"><strong>Tracking & Pose</strong><div class="bar"><span style="width:0%;" data-width="86%"></span></div></div>
+        <div class="skill"><strong>OCR & Document AI</strong><div class="bar"><span style="width:0%;" data-width="80%"></span></div></div>
+      </details>
+      <details class="panel">
+        <summary><span class="caret">▶</span> MLOps & Platforms</summary>
+        <div class="skill"><strong>Model Lifecycle (DVC,CML)</strong><div class="bar"><span style="width:0%;" data-width="88%"></span></div></div>
+        <div class="skill"><strong>CI/CD (GitHub, Argo)</strong><div class="bar"><span style="width:0%;" data-width="84%"></span></div></div>
+        <div class="skill"><strong>Serving (Triton, TorchServe)</strong><div class="bar"><span style="width:0%;" data-width="86%"></span></div></div>
+      </details>
+      <details class="panel">
+        <summary><span class="caret">▶</span> Edge, Cloud & Robotics</summary>
+        <div class="skill"><strong>Jetson/ONNX/TensorRT</strong><div class="bar"><span style="width:0%;" data-width="90%"></span></div></div>
+        <div class="skill"><strong>Azure/AWS/GCP</strong><div class="bar"><span style="width:0%;" data-width="82%"></span></div></div>
+        <div class="skill"><strong>ROS2/Industrial Comms</strong><div class="bar"><span style="width:0%;" data-width="78%"></span></div></div>
+      </details>
+    </section>
 
-  <section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <b>Robotics Navigation Suite</b> <span class="tag" onclick="alert('Project: Computer Vision')">Computer Vision</span>
-      <p>End-to-end real-time navigation and control for autonomous robots.</p>
-    </div>
-    <div class="card">
-      <b>GenAI Assisted Notetaking Tool</b> <span class="tag" onclick="alert('Project: GenAI')">GenAI</span>
-      <p>Smart summarization and note extraction for learning platforms.</p>
-    </div>
-  </section>
+    <section id="experience" class="section container">
+      <h2>Experience</h2>
+      <details class="panel" open>
+        <summary><span class="caret">▶</span> Technical Operations Lead — Vision AI</summary>
+        <ul>
+          <li>Drove architecture and deployment of vision systems across Pharma, Retail and Manufacturing, improving OEE and compliance.</li>
+          <li>Led MLOps modernization with automated data pipelines, versioning (DVC), and model rollout gates.</li>
+          <li>Delivered edge inference on Jetson with TensorRT; standardized monitoring and retraining loops.</li>
+        </ul>
+      </details>
+      <details class="panel">
+        <summary><span class="caret">▶</span> AI Solutions Architect</summary>
+        <ul>
+          <li>Designed scalable microservices for CV inference (Triton/TorchServe) with autoscaling and A/B testing.</li>
+          <li>Mentored cross-functional teams; instituted coding standards and reviews for ML and robotics stacks.</li>
+        </ul>
+      </details>
+    </section>
 
-  <section class="section" id="awards">
-    <h2>Awards & Patents</h2>
-    <ul>
-      <li><span class="chip" onclick="alert('US Patent Holder: Vision AI & Robotics')">US Patent Holder</span> Vision AI & Robotics</li>
-      <li><span class="chip" onclick="alert('Indian Patent Holder: ML Automation')">Indian Patent Holder</span> ML Automation</li>
-      <li><span class="tag" onclick="alert('Conference Speaker: GenAI, Robotics')">Conference Speaker</span> GenAI, Robotics</li>
-    </ul>
-  </section>
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Robotics Navigation Suite</h3>
+        <span class="tag" onclick="alert('Project: Computer Vision')">Computer Vision</span>
+        <span class="tag" onclick="alert('Project: Robotics')">Robotics</span>
+        <p>End-to-end real-time navigation and control for autonomous robots.</p>
+      </div>
+      <div class="card">
+        <h3>GenAI Assisted Notetaking Tool</h3>
+        <span class="tag" onclick="alert('Project: GenAI')">GenAI</span>
+        <span class="tag" onclick="alert('Project: NLP')">NLP</span>
+        <p>Smart summarization and note extraction for learning platforms.</p>
+      </div>
+    </section>
 
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <div>
-      <a href="mailto:rafism1997@gmail.com" class="chip">Email</a>
-      <a href="https://www.linkedin.com/in/rafishaikmohammed" target="_blank" class="chip">LinkedIn</a>
-      <span class="chip" onclick="alert('Location: Mission Viejo, CA')">Location: Mission Viejo, CA</span>
-    </div>
-  </section>
+    <section id="awards" class="section container">
+      <h2>Awards & Patents</h2>
+      <div class="card"><span class="tag" onclick="alert('US Patent Holder: Vision AI & Robotics')">US Patent Holder</span> Vision AI & Robotics</div>
+      <div class="card"><span class="tag" onclick="alert('Indian Patent Holder: ML Automation')">Indian Patent Holder</span> ML Automation</div>
+      <div class="card"><span class="tag" onclick="alert('Conference Speaker: GenAI, Robotics')">Conference Speaker</span> GenAI, Robotics</div>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <div class="card">
+        <a href="mailto:rafism1997@gmail.com" class="chip">Email</a>
+        <a href="https://www.linkedin.com/in/rafishaikmohammed" target="_blank" class="chip">LinkedIn</a>
+        <span class="chip" onclick="alert('Location: Mission Viejo, CA')">Mission Viejo, CA</span>
+      </div>
+    </section>
+  </main>
 
   <script>
-    // Fade-in (Intersection Observer)
-    document.querySelectorAll('.section').forEach(sec => {
+    // Fade-in (Intersection Observer) for sections
+    document.querySelectorAll('.section').forEach(function(sec, i){
       if ('IntersectionObserver' in window) {
         new IntersectionObserver(([entry]) => {
           if (entry.isIntersecting) sec.classList.add('visible');
         }).observe(sec);
       } else {
-        sec.classList.add('visible'); // Fallback for old browsers
+        sec.classList.add('visible');
       }
     });
-
     // Skill bar animation
-    document.querySelectorAll('.skills-bar span').forEach(function(bar){
-      setTimeout(() => {
-        bar.style.width = bar.getAttribute('data-width');
-      }, 400);
+    document.querySelectorAll('.bar span').forEach(function(span){
+      setTimeout(function(){
+        span.style.width = span.getAttribute('data-width');
+      }, 500);
     });
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('nav a').forEach(a=>{
-      a.addEventListener('click', function(e){
-        const href = this.getAttribute('href');
-        if(href.startsWith('#')){
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({behavior: 'smooth'});
-        }
-      });
-    });
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Rafi Shaik Mohammed Portfolio</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f5f5f7;
-      overflow-x: hidden;
-      color: #222;
-    }
-    header {
-      background: #064e3b;
-      color: #fff;
-      padding: 1.2em 0;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .badge {
-      background: #059669;
-      color: #fff;
-      padding: 0.4em 1em;
-      font-size: 0.97em;
-      border-radius: 25px;
-      display: inline-block;
-      margin: 1em 0 0.3em 0;
-    }
-    nav {
-      margin-top: 0.7em;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 0.8em;
-      font-weight: 500;
-      background: #065f46;
-      border-radius: 20px;
-      padding: 0.4em 1em;
-      transition: background 0.16s;
-      cursor: pointer;
-    }
-    nav a:hover {
-      background: #02735e;
-    }
-    .section {
-      max-width: 800px;
-      margin: 2.5em auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 32px 0 #05966922;
-      padding: 2em 2em 1em 2em;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s, transform 0.7s;
-      visibility: visible;
-    }
-    .section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h1, h2 {
-      margin: 0.4em 0;
-      letter-spacing: -1px;
-      font-weight: 700;
-    }
-    h2 { font-size: 1.45em; color: #064e3b; margin-bottom: 0.3em;}
-    .skills-bar {
-      background: #e5e7eb;
-      border-radius: 6px;
-      overflow: hidden;
-      margin-bottom: 1em;
-      position: relative;
-    }
-    .skills-bar span {
-      display: block;
-      height: 1.2em;
-      background: linear-gradient(90deg,#059669 70%,#34d399);
-      border-radius: 6px;
-      width: 0;
-      transition: width 1.2s cubic-bezier(.77,0,.18,1.01);
-    }
-    .card {
-      border: 1px solid #e5e7eb;
-      background: #fbfcff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px #05966911;
-      margin-bottom: 1em;
-      padding: 1em 1.4em;
-    }
-    .chip, .tag {
-      display: inline-block;
-      background: #f5f5f7;
-      color: #059669;
-      border: 1px solid #05966977;
-      border-radius: 15px;
-      padding: 0.18em 0.8em;
-      margin: 2px 2px 7px 0;
-      font-size: 0.96em;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.15s;
-      user-select: none;
-    }
-    .chip:hover, .tag:hover {
-      background: #e0faf1;
-      color: #065f46;
-      border-color: #059669;
-    }
-    .section:last-child {margin-bottom: 2em;}
-    @media (max-width: 650px){
-      .section{padding:1.2em;}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Rafi Shaik Mohammed</h1>
-    <div class="badge">Vision AI | MLOps | Robotics</div>
-    <nav>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#awards">Awards & Patents</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="section" id="hero" style="text-align:center;">
-    <h2>Available for Leadership Roles</h2>
-    <div class="chip" onclick="alert('US & Indian Patents Holder!')">US & Indian Patents Holder</div>
-    <div class="chip" onclick="alert('Active in GenAI & Robotics!')">Active in GenAI & Robotics</div>
-    <p>Building intelligent solutions for real-world impact.</p>
-  </section>
-
-  <section class="section" id="skills">
-    <h2>Skills</h2>
-    <div>
-      <span class="tag" onclick="alert('Expertise: Machine Learning & AI')">Machine Learning & AI</span>
-      <span class="tag" onclick="alert('Expertise: Robotics')">Robotics</span>
-      <span class="tag" onclick="alert('Expertise: MLOps')">MLOps</span>
-      <span class="tag" onclick="alert('Expertise: Deep Learning')">Deep Learning</span>
-    </div>
-    <div class="skills-bar"><span data-width="90%"></span></div>
-    <div>
-      <span class="tag" onclick="alert('Skill: Python')">Python</span>
-      <span class="tag" onclick="alert('Skill: TensorFlow')">TensorFlow</span>
-      <span class="tag" onclick="alert('Skill: OpenCV')">OpenCV</span>
-      <span class="tag" onclick="alert('Skill: PyTorch')">PyTorch</span>
-      <span class="tag" onclick="alert('Skill: C++')">C++</span>
-    </div>
-    <div class="skills-bar"><span data-width="80%"></span></div>
-    <div>
-      <span class="tag" onclick="alert('Used in projects: Git & GitHub')">Git & GitHub</span>
-      <span class="tag" onclick="alert('Used in projects: REST APIs')">REST APIs</span>
-      <span class="tag" onclick="alert('Used in projects: Docker')">Docker</span>
-    </div>
-    <div class="skills-bar"><span data-width="70%"></span></div>
-  </section>
-
-  <section class="section" id="experience">
-    <h2>Experience</h2>
-    <div class="card">
-      <b>Lead Vision Engineer – UST Global</b> <span class="chip" onclick="alert('Current Position')">Present</span>
-      <ul>
-        <li>AI Robotics, Vision Intelligence platforms</li>
-        <li>Mentored ML teams</li>
-      </ul>
-    </div>
-    <div class="card">
-      <b>ML Researcher – Academic & Freelance</b>
-      <ul>
-        <li>Kaggle Competitions</li>
-        <li>GenAI Projects</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <b>Robotics Navigation Suite</b> <span class="tag" onclick="alert('Project: Computer Vision')">Computer Vision</span>
-      <p>End-to-end real-time navigation and control for autonomous robots.</p>
-    </div>
-    <div class="card">
-      <b>GenAI Assisted Notetaking Tool</b> <span class="tag" onclick="alert('Project: GenAI')">GenAI</span>
-      <p>Smart summarization and note extraction for learning platforms.</p>
-    </div>
-  </section>
-
-  <section class="section" id="awards">
-    <h2>Awards & Patents</h2>
-    <ul>
-      <li><span class="chip" onclick="alert('US Patent Holder: Vision AI & Robotics')">US Patent Holder</span> Vision AI & Robotics</li>
-      <li><span class="chip" onclick="alert('Indian Patent Holder: ML Automation')">Indian Patent Holder</span> ML Automation</li>
-      <li><span class="tag" onclick="alert('Conference Speaker: GenAI, Robotics')">Conference Speaker</span> GenAI, Robotics</li>
-    </ul>
-  </section>
-
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <div>
-      <a href="mailto:rafism1997@gmail.com" class="chip">Email</a>
-      <a href="https://www.linkedin.com/in/rafishaikmohammed" target="_blank" class="chip">LinkedIn</a>
-      <span class="chip" onclick="alert('Location: Mission Viejo, CA')">Location: Mission Viejo, CA</span>
-    </div>
-  </section>
-
-  <script>
-    // Fade-in (Intersection Observer)
-    document.querySelectorAll('.section').forEach(sec => {
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver(([entry]) => {
-          if (entry.isIntersecting) sec.classList.add('visible');
-        }).observe(sec);
-      } else {
-        sec.classList.add('visible'); // Fallback for old browsers
-      }
-    });
-
-    // Skill bar animation
-    document.querySelectorAll('.skills-bar span').forEach(function(bar){
-      setTimeout(() => {
-        bar.style.width = bar.getAttribute('data-width');
-      }, 400);
-    });
-
-    // Smooth scroll for nav links
-    document.querySelectorAll('nav a').forEach(a=>{
+    // Smooth scroll for nav chips
+    document.querySelectorAll('nav a').forEach(function(a){
       a.addEventListener('click', function(e){
         const href = this.getAttribute('href');
         if(href.startsWith('#')){
