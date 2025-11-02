@@ -1,399 +1,139 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Rafi Shaik Mohammed | AI Solutions Architect</title>
-
   <meta name="description" content="Portfolio of Rafi Shaik Mohammed — Technical Ops Lead and AI Solutions Architect specializing in Vision AI, MLOps, and Robotics." />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
-
-    :root{--bg:#0b0f17;--panel:#121826;--muted:#9fb0c6;--text:#e6edf7;--brand:#4f8cff;--brand-2:#22d3ee;--accent:#a78bfa;--success:#10b981;--warning:#f59e0b;--card:#0f1522;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px}
-
+    :root{
+--bg:#0b0f17;--panel:#121826;--muted:#9fb0c6;--text:#e6edf7;--brand:#4f8cff;--brand-2:#22d3ee;--accent:#a78bfa;--success:#10b981;--warning:#f59e0b;--card:#0f1522;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px}
     *{box-sizing:border-box}
-
     html{scroll-behavior:smooth}
-
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-
     a{color:var(--brand)}
-
     header.site-header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,15,23,.92),rgba(11,15,23,.75));backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
-
     header.site-header .wrap{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px}
-
     .brand{display:flex;align-items:center;gap:12px}
-
     .brand .badge-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#021024;font-weight:800;font-size:12px;letter-spacing:.6px;text-transform:uppercase;box-shadow:var(--shadow)}
-
     .brand .meta{line-height:1}
-
     .brand .name{font-weight:800;letter-spacing:.2px}
-
     .brand .title{color:var(--muted);font-size:12px}
-
     nav{display:flex;gap:10px;flex-wrap:wrap}
-
     .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.08);text-decoration:none}
-
-
-
     header.hero{position:relative;overflow:hidden;padding:80px 20px 56px;border-bottom:1px solid rgba(255,255,255,.06);background:radial-gradient(1200px 600px at 70% -10%, rgba(79,140,255,.15), transparent 60%), linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0))}
-
     .container{max-width:1120px;margin:0 auto;padding:0 20px}
-
     .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
-
     .badge{display:inline-flex;gap:8px;align-items:center;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#021024;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;letter-spacing:.6px;text-transform:uppercase}
-
     .badge.alt{background:linear-gradient(90deg,#22c55e,#06b6d4);color:#021024}
-
     h1{font-size:40px;line-height:1.1;margin:14px 0 12px}
-
     .subtitle{font-size:18px;color:var(--muted)}
-
     .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-
     .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));color:var(--text);text-decoration:none;transition:.2s transform,.2s box-shadow}
-
     .btn.primary{background:linear-gradient(180deg,var(--brand),#2563eb);color:#fff;border:none;box-shadow:0 10px 24px rgba(79,140,255,.35)}
-
     .btn:hover{transform:translateY(-2px)}
-
     .orb{position:relative;aspect-ratio:1/1;border-radius:20px;background:radial-gradient(circle at 30% 30%, rgba(79,140,255,.35), transparent 40%), linear-gradient(145deg, var(--panel), #0c1322);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06), var(--shadow);display:flex;align-items:center;justify-content:center;overflow:hidden}
-
     .hero-photo{width:220px;height:220px;border-radius:20px;object-fit:cover;box-shadow:var(--shadow)}
-
-
-
-    nav.tabs{position:sticky;top:62px;background:linear-gradient(180deg,rgba(11,15,23,.92),rgba(11,15,23,.75));backdrop-filter:blur(10px);z-index:5;border-bottom:1px solid rgba(255,255,255,.06)}
-
-    nav.tabs .tabbar{display:flex;gap:10px;flex-wrap:wrap;padding:10px}
-
-    section{scroll-margin-top:120px}
-
-    .section{padding:56px 0}
-
-    .lead{color:var(--muted);margin-top:0}
-
-    .grid{display:grid;gap:18px}
-
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-
-    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
-
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-
-    .card h3{margin:8px 0 6px;font-size:18px}
-
-    .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(34,211,238,.15);color:var(--brand-2);font-size:12px;margin-right:6px}
-
-    .meta{color:var(--muted);font-size:14px}
-
-    details.panel{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:14px 16px}
-
-    details.panel + details.panel{margin-top:10px}
-
-    details.panel summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px}
-
-    details.panel summary::-webkit-details-marker{display:none}
-
-    .caret{transition:.2s transform}
-
+    section{max-width:1120px;margin:0 auto;padding:80px 20px}
+    h2{font-size:32px;margin:0 0 40px}
+    .panel{margin:20px 0;padding:0;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow)}
+    details{margin:20px 0}
+    summary{padding:18px 20px;cursor:pointer;font-weight:600;user-select:none;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0))}
+    summary:hover{background:rgba(255,255,255,.02)}
+    .caret{display:inline-block;transition:transform .2s;margin-right:10px}
     details[open] .caret{transform:rotate(90deg)}
-
-    .skill{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center}
-
-    .bar{height:10px;background:#1b2536;border-radius:999px;overflow:hidden}
-
-    .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0}
-
-    .columns{display:grid;gap:18px;grid-template-columns:1fr 1fr}
-
-    @media (max-width:900px){.columns{grid-template-columns:1fr}}
-
-    .awards{display:grid;gap:16px}
-
-    .award-item{display:flex;align-items:flex-start;gap:12px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
-
-    .award-icon{width:28px;height:28px;border-radius:8px;background:linear-gradient(145deg,#1f2937,#0f172a);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
-
-    .award-title{font-weight:700}
-
-    /* simple animation for bars */
-
-    .bar>span{animation:fill 1.2s ease forwards}
-
-    @keyframes fill{from{width:0} to{width:var(--w,80%)}}
-
+    details ul{margin:0 0 18px;padding:0 20px 0 50px}
+    details li{margin:10px 0;color:var(--muted);line-height:1.6}
+    .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:30px 0}
+    .skill-card{padding:14px 18px;background:linear-gradient(135deg,rgba(79,140,255,.08),rgba(34,211,238,.08));border:1px solid rgba(255,255,255,.08);border-radius:10px;font-weight:600;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+    footer{padding:60px 20px;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+    footer p{color:var(--muted);margin:8px 0}
+    @media(max-width:768px){header.hero{padding:60px 20px 40px}.hero-inner{grid-template-columns:1fr}.orb{max-width:280px;margin:0 auto}h1{font-size:32px}}
   </style>
-
 </head>
-
 <body>
-
   <header class="site-header">
-
     <div class="wrap">
-
       <div class="brand">
-
-        <span class="badge-tag">Vision Architect | Hands-on Expert</span>
-
+        <span class="badge-tag">🚀 Open to Work</span>
         <div class="meta">
-
           <div class="name">Rafi Shaik Mohammed</div>
-
           <div class="title">AI Solutions Architect</div>
-
         </div>
-
       </div>
-
       <nav>
-
-        <a href="#about" class="chip">About</a>
-
-        <a href="#skills" class="chip">Skills</a>
-
         <a href="#experience" class="chip">Experience</a>
-
-        <a href="#education" class="chip">Education</a>
-
-        <a href="#projects" class="chip">Projects</a>
-
-        <a href="#languages" class="chip">Languages</a>
-
-        <a href="#awards" class="chip">Awards & Patents</a>
-
-        <a href="#contact" class="chip">Contact</a>
-
+        <a href="#skills" class="chip">Skills</a>
+        <a href="https://www.linkedin.com/in/rafi-shaik-mohammed/" class="chip">LinkedIn</a>
       </nav>
-
     </div>
-
   </header>
-
-
-
   <header class="hero">
-
     <div class="container">
-
       <div class="hero-inner">
-
         <div>
-
-          <span class="badge alt">Available for leadership in Vision AI</span>
-
-          <h1>Designing Intelligent Vision and Robotics Solutions</h1>
-
-          <p class="subtitle">Technical Ops Lead and AI Solutions Architect specializing in Vision AI, MLOps, and Robotics.</p>
-
+          <span class="badge">💡 Innovating AI & Robotics</span>
+          <h1>Hi, I'm Rafi 👋</h1>
+          <p class="subtitle">
+            Technical Ops Lead &amp; AI Solutions Architect at <strong>Perceptyne</strong> — Specializing in Vision AI, MLOps, and Robotics.
+          </p>
           <div class="cta">
-
-            <a href="#projects" class="btn primary">Explore Projects</a>
-
-            <a href="#awards" class="btn">Awards & Patents</a>
-
+            <a href="https://www.linkedin.com/in/rafi-shaik-mohammed/" class="btn primary">Connect on LinkedIn</a>
+            <a href="mailto:rafishaikmohammed@gmail.com" class="btn">Email Me</a>
           </div>
-
         </div>
-
         <div class="orb">
-
-          <img src="profile.jpg" alt="Rafi Shaik Mohammed — portrait" class="hero-photo" width="220" height="220" onerror="this.src='https://via.placeholder.com/220'" />
-
+          <img alt="Rafi Shaik Mohammed — portrait" class="hero-photo" height="220" onerror="this.src='https://via.placeholder.com/220'" src="Prof 1.jpg" width="220" />
         </div>
-
       </div>
-
     </div>
-
   </header>
-
-
-
-  <main>
-
-    <!-- About: keep content as-is from current site (do not modify wording) -->
-
-    <section id="about" class="section container">
-
-      <h2>About</h2>
-
-      <p class="lead">Hands-on AI Solutions Architect delivering end-to-end computer vision systems from architecture through deployment. I build production-grade, vision-based intelligent systems and MLOps pipelines across Pharma, Retail, and Manufacturing—optimizing reliability, compliance, and OEE. Over 5+ years of designing, implementing, and scaling AI at the edge and in the cloud.</p>
-
-    </section>
-
-
-
-    <!-- Skills (collapsible panels + animated bars) -->
-
-    <section id="skills" class="section container">
-
-      <h2>Skills</h2>
-
-      <details class="panel" open>
-
-        <summary><span class="caret">▶</span> Computer Vision & AI</summary>
-
-        <div class="grid">
-
-          <div class="skill"><strong>Detection/Segmentation</strong><div class="bar"><span style="--w:92%"></span></div></div>
-
-          <div class="skill"><strong>Tracking & Pose</strong><div class="bar"><span style="--w:85%"></span></div></div>
-
-          <div class="skill"><strong>OCR & Document AI</strong><div class="bar"><span style="--w:80%"></span></div></div>
-
-        </div>
-
-      </details>
-
-      <details class="panel">
-
-        <summary><span class="caret">▶</span> MLOps & Platforms</summary>
-
-        <div class="grid">
-
-          <div class="skill"><strong>Model Lifecycle (DVC,CML)</strong><div class="bar"><span style="--w:88%"></span></div></div>
-
-          <div class="skill"><strong>CI/CD (GitHub, Argo)</strong><div class="bar"><span style="--w:84%"></span></div></div>
-
-          <div class="skill"><strong>Serving (Triton, TorchServe)</strong><div class="bar"><span style="--w:86%"></span></div></div>
-
-        </div>
-
-      </details>
-
-      <details class="panel">
-
-        <summary><span class="caret">▶</span> Edge, Cloud & Robotics</summary>
-
-        <div class="grid">
-
-          <div class="skill"><strong>Jetson/ONNX/TensorRT</strong><div class="bar"><span style="--w:90%"></span></div></div>
-
-          <div class="skill"><strong>Azure/AWS/GCP</strong><div class="bar"><span style="--w:82%"></span></div></div>
-
-          <div class="skill"><strong>ROS2/Industrial Comms</strong><div class="bar"><span style="--w:78%"></span></div></div>
-
-        </div>
-
-      </details>
-
-    </section>
-
-
-
-    <!-- Experience (collapsible roles) -->
-
-    <section id="experience" class="section container">
-
-      <h2>Experience</h2>
-
-      <details class="panel" open>
-
-        <summary><span class="caret">▶</span> Technical Operations Lead — Vision AI</summary>
-
+  <section id="experience">
+    <h2>💼 Experience Highlights</h2>
+    <div class="panel">
+      <details open>
+        <summary><span class="caret">▶</span> Technical Operations Lead</summary>
         <ul>
-
-          <li>Drove architecture and deployment of vision systems across Pharma, Retail and Manufacturing, improving OEE and compliance.</li>
-
-          <li>Led MLOps modernization with automated data pipelines, versioning (DVC), and model rollout gates.</li>
-
-          <li>Delivered edge inference on Jetson with TensorRT; standardized monitoring and retraining loops.</li>
-
+          <li>Led operations for 20+ live models at Perceptyne (70k+ monthly requests, &lt;300ms latency).</li>
+          <li>Built multi-stage CI/CD pipelines (GitHub Actions + ArgoCD) reducing deployment time by 50%.</li>
+          <li>Maintained 99.9% uptime in production with real-time monitoring (Datadog, CloudWatch).</li>
         </ul>
-
       </details>
-
-      <details class="panel">
-
+      <details>
         <summary><span class="caret">▶</span> AI Solutions Architect</summary>
-
         <ul>
-
           <li>Designed scalable microservices for CV inference (Triton/TorchServe) with autoscaling and A/B testing.</li>
-
           <li>Mentored cross-functional teams; instituted coding standards and reviews for ML and robotics stacks.</li>
-
         </ul>
-
       </details>
-
-    </section>
-
-
-
-    <!-- Education & Languages -->
-
-    <section class="section container columns">
-
-      <section id="education">
-
-        <h2>Education</h2>
-
-        <div class="card">
-
-          <h3>Bachelor of Technology</h3>
-
-          <div class="meta">Major in Electronics/Computer vision coursework. Honors; projects in robotics and AI.</div>
-
-        </div>
-
-      </section>
-
-      <section id="languages">
-
-        <h2>Languages</h2>
-
-        <div class="card">
-
-          <div class="grid">
-
-            <div><span class="tag">English</span> Fluent</div>
-
-            <div><span class="tag">Hindi</span> Professional</div>
-
-            <div><span class="tag">Telugu</span> Native</div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-    </section>
-
-
-
-    <!-- Projects (interactive cards) -->
-
-    <section id="projects" class="section container">
-
-      <h2>Projects</h2>
-
-      <div class="grid cols-3">
-
-        <article class="card">
-
-          <h3>Smart Pharma Visual QA</h3>
-
-          <p class="meta">End-to-end CV pipeline for blister/label QA. Edge inference (Jetson) with cloud retraining.</p>
-
-          <div><span class="tag">YOLO/Detectron</span> <span class="
+      <details>
+        <summary><span class="caret">▶</span> Robotics Engineer</summary>
+        <ul>
+          <li>Developed ROS2 systems for autonomous AMR fleet (multi-robot orchestration via Docker + BT).</li>
+          <li>Deployed perception modules (YOLOv8, DepthAnything v2) for real-time navigation and docking.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+  <section id="skills">
+    <h2>🧰 Core Skills</h2>
+    <div class="skill-grid">
+      <div class="skill-card">Python · PyTorch</div>
+      <div class="skill-card">Docker · Kubernetes</div>
+      <div class="skill-card">AWS · Azure</div>
+      <div class="skill-card">FastAPI · Triton</div>
+      <div class="skill-card">CI/CD (ArgoCD)</div>
+      <div class="skill-card">ROS2 · Gazebo</div>
+      <div class="skill-card">YOLOv8 · SAM</div>
+      <div class="skill-card">MongoDB · SQL</div>
+    </div>
+  </section>
+  <footer>
+    <p><span class="badge alt">✨ Let's Build the Future</span></p>
+    <p>© 2024 Rafi Shaik Mohammed · All rights reserved.</p>
+  </footer>
+</body>
+</html>
