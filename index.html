@@ -43,6 +43,7 @@
       border-radius: 20px;
       padding: 0.4em 1em;
       transition: background 0.16s;
+      cursor: pointer;
     }
     nav a:hover {
       background: #02735e;
@@ -102,6 +103,14 @@
       margin: 2px 2px 7px 0;
       font-size: 0.96em;
       font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+      user-select: none;
+    }
+    .chip:hover, .tag:hover {
+      background: #e0faf1;
+      color: #065f46;
+      border-color: #059669;
     }
     .section:last-child {margin-bottom: 2em;}
     @media (max-width: 650px){
@@ -124,25 +133,40 @@
 
   <section class="section" id="hero" style="text-align:center;">
     <h2>Available for Leadership Roles</h2>
-    <div class="chip">US & Indian Patents Holder</div>
-    <div class="chip">Active in GenAI & Robotics</div>
+    <div class="chip" onclick="alert('US & Indian Patents Holder!')">US & Indian Patents Holder</div>
+    <div class="chip" onclick="alert('Active in GenAI & Robotics!')">Active in GenAI & Robotics</div>
     <p>Building intelligent solutions for real-world impact.</p>
   </section>
 
   <section class="section" id="skills">
     <h2>Skills</h2>
-    <div><span class="tag">Machine Learning & AI</span><span class="tag">Robotics</span><span class="tag">MLOps</span><span class="tag">Deep Learning</span></div>
+    <div>
+      <span class="tag" onclick="alert('Expertise: Machine Learning & AI')">Machine Learning & AI</span>
+      <span class="tag" onclick="alert('Expertise: Robotics')">Robotics</span>
+      <span class="tag" onclick="alert('Expertise: MLOps')">MLOps</span>
+      <span class="tag" onclick="alert('Expertise: Deep Learning')">Deep Learning</span>
+    </div>
     <div class="skills-bar"><span data-width="90%"></span></div>
-    <div><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span><span class="tag">C++</span></div>
+    <div>
+      <span class="tag" onclick="alert('Skill: Python')">Python</span>
+      <span class="tag" onclick="alert('Skill: TensorFlow')">TensorFlow</span>
+      <span class="tag" onclick="alert('Skill: OpenCV')">OpenCV</span>
+      <span class="tag" onclick="alert('Skill: PyTorch')">PyTorch</span>
+      <span class="tag" onclick="alert('Skill: C++')">C++</span>
+    </div>
     <div class="skills-bar"><span data-width="80%"></span></div>
-    <div><span class="tag">Git & GitHub</span><span class="tag">REST APIs</span><span class="tag">Docker</span></div>
+    <div>
+      <span class="tag" onclick="alert('Used in projects: Git & GitHub')">Git & GitHub</span>
+      <span class="tag" onclick="alert('Used in projects: REST APIs')">REST APIs</span>
+      <span class="tag" onclick="alert('Used in projects: Docker')">Docker</span>
+    </div>
     <div class="skills-bar"><span data-width="70%"></span></div>
   </section>
 
   <section class="section" id="experience">
     <h2>Experience</h2>
     <div class="card">
-      <b>Lead Vision Engineer – UST Global</b> <span class="chip">Present</span>
+      <b>Lead Vision Engineer – UST Global</b> <span class="chip" onclick="alert('Current Position')">Present</span>
       <ul>
         <li>AI Robotics, Vision Intelligence platforms</li>
         <li>Mentored ML teams</li>
@@ -160,11 +184,11 @@
   <section class="section" id="projects">
     <h2>Projects</h2>
     <div class="card">
-      <b>Robotics Navigation Suite</b> <span class="tag">Computer Vision</span>
+      <b>Robotics Navigation Suite</b> <span class="tag" onclick="alert('Project: Computer Vision')">Computer Vision</span>
       <p>End-to-end real-time navigation and control for autonomous robots.</p>
     </div>
     <div class="card">
-      <b>GenAI Assisted Notetaking Tool</b> <span class="tag">GenAI</span>
+      <b>GenAI Assisted Notetaking Tool</b> <span class="tag" onclick="alert('Project: GenAI')">GenAI</span>
       <p>Smart summarization and note extraction for learning platforms.</p>
     </div>
   </section>
@@ -172,9 +196,9 @@
   <section class="section" id="awards">
     <h2>Awards & Patents</h2>
     <ul>
-      <li><span class="chip">US Patent Holder</span> Vision AI & Robotics</li>
-      <li><span class="chip">Indian Patent Holder</span> ML Automation</li>
-      <li><span class="tag">Conference Speaker</span> GenAI, Robotics</li>
+      <li><span class="chip" onclick="alert('US Patent Holder: Vision AI & Robotics')">US Patent Holder</span> Vision AI & Robotics</li>
+      <li><span class="chip" onclick="alert('Indian Patent Holder: ML Automation')">Indian Patent Holder</span> ML Automation</li>
+      <li><span class="tag" onclick="alert('Conference Speaker: GenAI, Robotics')">Conference Speaker</span> GenAI, Robotics</li>
     </ul>
   </section>
 
@@ -183,7 +207,7 @@
     <div>
       <a href="mailto:rafism1997@gmail.com" class="chip">Email</a>
       <a href="https://www.linkedin.com/in/rafishaikmohammed" target="_blank" class="chip">LinkedIn</a>
-      <span class="chip">Location: Mission Viejo, CA</span>
+      <span class="chip" onclick="alert('Location: Mission Viejo, CA')">Location: Mission Viejo, CA</span>
     </div>
   </section>
 
@@ -204,6 +228,17 @@
       setTimeout(() => {
         bar.style.width = bar.getAttribute('data-width');
       }, 400);
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.startsWith('#')){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior: 'smooth'});
+        }
+      });
     });
   </script>
 </body>
