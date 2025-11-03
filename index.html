@@ -64,53 +64,127 @@
         </div>
       </div>
       <nav>
-        <a href="#experience" class="chip">Experience</a>
-        <a href="#skills" class="chip">Skills</a>
-        <a href="https://www.linkedin.com/in/rafi-shaik-mohammed/" class="chip">LinkedIn</a>
+        <a class="chip" href="#profile">Profile</a>
+        <a class="chip" href="#experience">Experience</a>
+        <a class="chip" href="#projects">Projects</a>
+        <a class="chip" href="#skills">Skills</a>
+        <a class="chip" href="#contact">Contact</a>
+        <a class="chip" href="https://www.linkedin.com/in/rafi-shaik-mohammed/">LinkedIn</a>
       </nav>
     </div>
   </header>
+
   <header class="hero">
     <div class="container">
       <div class="hero-inner">
         <div>
           <span class="badge">✨ AI × MLOps</span>
-          <h1>Driving Innovation in<br/>Vision AI &amp; Automation</h1>
+          <h1>Driving Innovation in<br/>Vision AI & Automation</h1>
           <p class="subtitle">Technical Ops Lead at Cyngn | Building production-grade AI systems for autonomous vehicles and scalable cloud infrastructure.</p>
           <div class="cta">
-            <a href="https://www.linkedin.com/in/rafi-shaik-mohammed/" class="btn primary">💬 Let's Connect</a>
-            <a href="#experience" class="btn">📂 View Experience</a>
+            <a class="btn primary" href="#contact">💬 Let's Connect</a>
+            <a class="btn" href="#experience">📂 View Experience</a>
           </div>
         </div>
         <div class="orb">
-          <img src="Prof 1.jpg" alt="Rafi Shaik Mohammed" class="hero-photo" />
+          <img class="hero-photo" alt="Rafi Shaik Mohammed" />
         </div>
       </div>
     </div>
   </header>
-  <section id="experience">
-    <h2>🏢 Professional Experience</h2>
+
+  <section id="profile">
+    <h2>👤 Profile</h2>
     <div class="panel">
       <details open>
-        <summary><span class="caret">▸</span>Technical Ops Lead — Cyngn (Current)</summary>
+        <summary><span class="caret">▸</span>Professional Summary</summary>
         <ul>
-          <li>Orchestrate deployment and operations of AI-powered autonomous vehicle systems</li>
-          <li>Design and implement MLOps pipelines for continuous model delivery</li>
-          <li>Lead integration of Vision AI models with cloud-based infrastructure</li>
-          <li>Manage cloud resources and CI/CD workflows using AWS, Azure, and GCP</li>
-        </ul>
-      </details>
-      <details>
-        <summary><span class="caret">▸</span>AI Solutions Architect — Independent Projects</summary>
-        <ul>
-          <li>Developed custom YOLOv8 detection systems for real-time applications</li>
-          <li>Built end-to-end computer vision pipelines with TensorFlow &amp; PyTorch</li>
-          <li>Integrated OpenCV-based vision systems with control modules</li>
-          <li>Deployed scalable AI solutions on containerized cloud infrastructure</li>
+          <li>AI Solutions Architect and Technical Operations Lead with expertise in Vision AI, MLOps, and cloud-native deployment.</li>
+          <li>Proven track record delivering production-grade systems with CI/CD, ML lifecycle orchestration, and scalable infra on AWS, Azure, and GCP.</li>
+          <li>Experienced in building end-to-end pipelines, model optimization, and integrating AI services into enterprise applications.</li>
         </ul>
       </details>
     </div>
   </section>
+
+  <section id="experience">
+    <h2>🏢 Work Experience</h2>
+    <div class="panel">
+      <details open>
+        <summary><span class="caret">▸</span>Technical Ops Lead — Cyngn — San Francisco Bay Area — 2023–Present</summary>
+        <ul>
+          <li>Orchestrate deployment and operations of AI-powered autonomous vehicle systems across staging and production environments.</li>
+          <li>Design and implement MLOps pipelines for continuous training and model delivery, integrating MLflow and artifact versioning.</li>
+          <li>Lead integration of Vision AI models with cloud-based microservices; established observability (metrics, logs, traces) for models and data.</li>
+          <li>Manage cloud resources and CI/CD workflows using AWS, Azure, and GCP; optimized costs and reliability with IaC.</li>
+        </ul>
+      </details>
+      <details>
+        <summary><span class="caret">▸</span>AI Solutions Architect — Independent — Remote — 2021–2023</summary>
+        <ul>
+          <li>Delivered custom YOLOv8 detection systems for real-time applications with quantization and ONNX/TensorRT exports.</li>
+          <li>Built end-to-end computer vision pipelines with TensorFlow & PyTorch; automated data labeling and augmentation.</li>
+          <li>Integrated OpenCV-based vision with control modules; deployed containerized services with Kubernetes and CI/CD.</li>
+        </ul>
+      </details>
+      <details>
+        <summary><span class="caret">▸</span>Software Developer III — Company — Location — 2019–2021</summary>
+        <ul>
+          <li>Developed cloud-backed services and APIs powering analytics and ML features; implemented efficient data pipelines.</li>
+          <li>Hardened production deployments with automated testing, monitoring, and rollback strategies.</li>
+        </ul>
+      </details>
+      <details>
+        <summary><span class="caret">▸</span>Software Developer II — Company — Location — 2017–2019</summary>
+        <ul>
+          <li>Built microservices and internal tools to support ML experimentation and feature delivery.</li>
+          <li>Collaborated with cross-functional teams to ship performant and maintainable components.</li>
+        </ul>
+      </details>
+      <details>
+        <summary><span class="caret">▸</span>Software Engineering Intern — Company — Location — 2016</summary>
+        <ul>
+          <li>Contributed to backend services and automation scripts; learned best practices for code quality and reviews.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>🚧 Projects & Initiatives</h2>
+    <div class="panel">
+      <details open>
+        <summary><span class="caret">▸</span>Vision AI Platform</summary>
+        <ul>
+          <li>Designed a modular pipeline for dataset curation, training, evaluation, and deployment of object detection models (YOLOv8, TF, PyTorch).</li>
+          <li>Implemented tracking, model registry, and A/B rollout; exported models to ONNX/TensorRT for edge inference.</li>
+          <li>Established CI/CD for models and services, enabling rapid experimentation and safe promotion to production.</li>
+        </ul>
+      </details>
+      <details>
+        <summary><span class="caret">▸</span>NLP Assistant / Metahuman Interface</summary>
+        <ul>
+          <li>Built a conversational assistant with LLM-based orchestration and a real-time avatar interface.</li>
+          <li>Integrated retrieval, tool use, and guardrails; deployed scalable APIs with containerized microservices.</li>
+        </ul>
+      </details>
+      <details>
+        <summary><span class="caret">▸</span>Tea Leaf Classification</summary>
+        <ul>
+          <li>Developed a computer vision model to classify tea leaf quality and detect defects using modern CNN backbones.</li>
+          <li>Packaged training and inference with reproducible containers; shipped a simple UI for inspection workflows.</li>
+        </ul>
+      </details>
+      <details>
+        <summary><span class="caret">▸</span>POS Application</summary>
+        <ul>
+          <li>Implemented a lightweight POS web app integrating inventory, billing, and basic analytics.</li>
+          <li>Focused on reliability, usability, and deployment simplicity for small businesses.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
   <section id="skills">
     <h2>🛠 Technical Skills</h2>
     <div class="skill-grid">
@@ -129,57 +203,24 @@
       <div class="skill-card">CI/CD</div>
     </div>
   </section>
+
+  <section id="contact">
+    <h2>📫 Contact</h2>
+    <div class="panel">
+      <details open>
+        <summary><span class="caret">▸</span>Get in Touch</summary>
+        <ul>
+          <li>Phone: +1 (XXX) XXX-XXXX</li>
+          <li>Email: <a href="mailto:rafi@example.com">rafi@example.com</a></li>
+          <li>Address: San Francisco Bay Area, CA, USA</li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/rafi-shaik-mohammed/">linkedin.com/in/rafi-shaik-mohammed</a></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
   <section id="achievements">
     <h2>🏆 Achievements</h2>
     <div class="panel">
       <details>
-        <summary><span class="caret">▸</span>Professional Recognition</summary>
-        <ul>
-          <li>Led successful deployment of autonomous vehicle AI systems in production environments</li>
-          <li>Optimized MLOps workflows, reducing model deployment time by significant margins</li>
-          <li>Recognized for excellence in integrating complex AI solutions with enterprise infrastructure</li>
-        </ul>
-      </details>
-    </div>
-  </section>
-  <section id="patents">
-    <h2>📜 Patents</h2>
-    <div class="panel">
-      <details>
-        <summary><span class="caret">▸</span>Innovation &amp; IP</summary>
-        <ul>
-          <li>Contributing to cutting-edge research in autonomous vehicle vision systems</li>
-          <li>Developing novel approaches to real-time object detection and tracking</li>
-          <li>Patent applications pending in AI-driven automation technologies</li>
-        </ul>
-      </details>
-    </div>
-  </section>
-  <section id="education">
-    <h2>🎓 Education</h2>
-    <div class="panel">
-      <details>
-        <summary><span class="caret">▸</span>Academic Background</summary>
-        <ul>
-          <li>Master's Degree in Computer Science with focus on Artificial Intelligence</li>
-          <li>Specialized coursework in Machine Learning, Computer Vision, and Deep Learning</li>
-          <li>Thesis work on Vision AI applications for autonomous systems</li>
-        </ul>
-      </details>
-    </div>
-  </section>
-  <section id="languages">
-    <h2>🌍 Languages</h2>
-    <div class="skill-grid">
-      <div class="skill-card">English</div>
-      <div class="skill-card">Hindi</div>
-      <div class="skill-card">Telugu</div>
-      <div class="skill-card">Urdu</div>
-    </div>
-  </section>
-  <footer>
-    <p>© 2025 Rafi Shaik Mohammed | AI Solutions Architect</p>
-    <p>📧 <a href="mailto:rafi@example.com">rafi@example.com</a> | 🔗 <a href="https://www.linkedin.com/in/rafi-shaik-mohammed/">LinkedIn</a></p>
-  </footer>
-</body>
-</html>
+        <summary><span class="
