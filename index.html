@@ -52,6 +52,8 @@
     footer p{color:var(--muted);margin:8px 0}
     @media(max-width:768px){header.hero{padding:60px 20px 40px}.hero-inner{grid-template-columns:1fr}.orb{max-width:280px;margin:0 auto}h1{font-size:32px}}
   </style>
+  <!-- Three.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -276,5 +278,75 @@
       </details>
     </div>
   </section>
+
+  <!-- Interactive Three.js section -->
+  <section id="industries-3d" style="padding:80px 0;">
+    <h2 style="text-align:center;">🌍 Industries I Impact</h2>
+    <div style="display:flex; justify-content:center;">
+      <div id="three-container" style="width: 600px; height: 400px; border-radius: 18px; background: #111827;"></div>
+    </div>
+    <p style="text-align:center; color:var(--muted); max-width:700px;margin: 22px auto 0;">
+      Explore sectors I've transformed: Pharma, Retail, and Manufacturing
+    </p>
+  </section>
+  <script>
+    let started = false;
+    function animateCubes() {
+      const container = document.getElementById('three-container');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(width, height);
+      container.appendChild(renderer.domElement);
+
+      // Industry Colors
+      const mats = [
+        new THREE.MeshStandardMaterial({ color: "#22c55e" }),  // Pharma - Green
+        new THREE.MeshStandardMaterial({ color: "#a78bfa" }),  // Retail - Purple
+        new THREE.MeshStandardMaterial({ color: "#06b6d4" })   // Manufacturing - Blue
+      ];
+
+      const cubes = [
+        new THREE.Mesh(new THREE.BoxGeometry(1.5,1.5,1.5), mats[0]),
+        new THREE.Mesh(new THREE.BoxGeometry(1.2,1.2,1.2), mats[1]),
+        new THREE.Mesh(new THREE.BoxGeometry(1,1,1), mats[2])
+      ];
+
+      cubes[0].position.x = -2.2;
+      cubes[2].position.x = 2.2;
+      scene.add(cubes[0]);
+      scene.add(cubes[1]);
+      scene.add(cubes[2]);
+
+      const light = new THREE.DirectionalLight(0xffffff, 1);
+      light.position.set(5,10,10);
+      scene.add(light);
+      scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+
+      camera.position.z = 7;
+
+      function animate() {
+        cubes[0].rotation.x += 0.011; cubes[0].rotation.y += 0.018;
+        cubes[1].rotation.x += 0.012; cubes[1].rotation.y += 0.015;
+        cubes[2].rotation.x += 0.014; cubes[2].rotation.y -= 0.019;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    // Only start animation when section is in viewport
+    window.addEventListener('scroll', function(){
+      const sec = document.getElementById('industries-3d');
+      if (!started && sec.getBoundingClientRect().top < window.innerHeight - 50) {
+        started = true;
+        animateCubes();
+      }
+    });
+  </script>
 </body>
 </html>
